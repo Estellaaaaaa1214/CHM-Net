@@ -90,8 +90,3 @@ anonymized locked checkpoint for model loading and single-split inference checks
 Its metadata records a 70/30 evaluation with AUC `0.7116`; it is not the source
 of the reported five-fold CHM-Net result.
 
-## Notes on Logs
-
-Only summaries whose values match the manuscript are included as release logs.
-Older exploratory logs and spreadsheets with inconsistent values were excluded;
-see `AUDIT.md` for details.
