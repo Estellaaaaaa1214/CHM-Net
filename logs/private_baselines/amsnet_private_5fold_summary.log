@@ -1,0 +1,13 @@
+# Sanitized summary excerpt. This block matches the AMSNet row in the manuscript.
+
+[SUMMARY] AMSNet
+================================================================================
+accuracy: 0.4974 +/- 0.0331
+auc: 0.5296 +/- 0.0905
+precision: 0.4989 +/- 0.0338
+recall: 0.5988 +/- 0.3775
+sensitivity: 0.5988 +/- 0.3775
+specificity: 0.4047 +/- 0.3921
+f1_score: 0.4900 +/- 0.1991
+mcc: -0.0200 +/- 0.1001
+loss: 0.7634 +/- 0.1228

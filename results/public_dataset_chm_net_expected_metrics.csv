@@ -1,0 +1,3 @@
+model,dataset,acc_percent,auc_percent,f1_percent,sensitivity_percent,specificity_percent
+CHM-Net,NoduleMNIST3D,88.39,91.38,88.46,89.03,87.74
+CHM-Net,AdrenalMNIST3D,87.58,87.74,70.87,65.22,94.32

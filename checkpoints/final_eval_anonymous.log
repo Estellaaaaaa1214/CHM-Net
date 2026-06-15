@@ -1,0 +1,65 @@
+Experiment dir: MacroMicro_MIL_Output/MacroMicro_MIL_20260516_002342
+Device: cuda
+Image root: data/private_mri
+Excel path: metadata/private_labels_anonymous.xlsx
+Detector epochs: 100
+Classifier epochs: 150
+Top-K ROIs: 6, ROI size: 32
+Device: cuda
+Image root: data/private_mri
+Excel path: metadata/private_labels_anonymous.xlsx
+Output dir: MacroMicro_MIL_Output/resume_or_test_20260516_002342
+Total patient folders: 184
+Valid patients with all modalities and label row: 183
+Labeled patients: 183
+Class distribution: low=92, high=91
+Split: train=128 (70%), val/test merged=55 (30%)
+Train class distribution: [64, 64]
+Val/Test class distribution: [28, 27]
+Optimizer state loaded.
+Checkpoint: <PROJECT_ROOT>/checkpoints/final_macro_micro_locked_auc07116_anonymous.pth
+Checkpoint epoch: 9
+Checkpoint val metrics: {'accuracy': 0.7272727272727273, 'precision': 0.8, 'recall': 0.5925925925925926, 'f1_score': 0.6808510638297872, 'auc': 0.7116402116402116, 'sensitivity': 0.5925925925925926, 'specificity': 0.8571428571428571, 'balanced_accuracy': 0.7248677248677249, 'mcc': 0.46737878934398275, 'confusion_matrix': [[24, 4], [11, 16]], 'roc_curve': {'fpr': [0.0, 0.0, 0.03571428571428571, 0.03571428571428571, 0.07142857142857142, 0.07142857142857142, 0.10714285714285714, 0.10714285714285714, 0.14285714285714285, 0.14285714285714285, 0.21428571428571427, 0.21428571428571427, 0.2857142857142857, 0.2857142857142857, 0.5, 0.5, 0.6428571428571429, 0.6428571428571429, 0.6785714285714286, 0.6785714285714286, 0.7857142857142857, 0.7857142857142857, 0.8214285714285714, 0.8214285714285714, 0.8928571428571429, 0.8928571428571429, 1.0], 'tpr': [0.0, 0.037037037037037035, 0.037037037037037035, 0.14814814814814814, 0.14814814814814814, 0.4074074074074074, 0.4074074074074074, 0.5555555555555556, 0.5555555555555556, 0.5925925925925926, 0.5925925925925926, 0.6296296296296297, 0.6296296296296297, 0.6666666666666666, 0.6666666666666666, 0.7777777777777778, 0.7777777777777778, 0.8148148148148148, 0.8148148148148148, 0.8518518518518519, 0.8518518518518519, 0.9259259259259259, 0.9259259259259259, 0.9629629629629629, 0.9629629629629629, 1.0, 1.0]}, 'classification_report': {'low_density': {'precision': 0.6857142857142857, 'recall': 0.8571428571428571, 'f1-score': 0.7619047619047619, 'support': 28.0}, 'high_density': {'precision': 0.8, 'recall': 0.5925925925925926, 'f1-score': 0.6808510638297872, 'support': 27.0}, 'accuracy': 0.7272727272727273, 'macro avg': {'precision': 0.7428571428571429, 'recall': 0.7248677248677249, 'f1-score': 0.7213779128672746, 'support': 55.0}, 'weighted avg': {'precision': 0.7418181818181818, 'recall': 0.7272727272727273, 'f1-score': 0.7221147646679561, 'support': 55.0}}, 'sample_stats': {'total': 55, 'class_distribution': [28, 27]}}
+
+evaluate:   0%|          | 0/28 [00:00<?, ?it/s]
+evaluate:   4%|▎         | 1/28 [00:10<04:49, 10.73s/it]
+evaluate:   7%|▋         | 2/28 [00:16<03:21,  7.73s/it]
+evaluate:  11%|█         | 3/28 [00:19<02:16,  5.47s/it]
+evaluate:  14%|█▍        | 4/28 [00:23<01:58,  4.93s/it]
+evaluate:  18%|█▊        | 5/28 [00:25<01:32,  4.03s/it]
+evaluate:  21%|██▏       | 6/28 [00:29<01:24,  3.86s/it]
+evaluate:  25%|██▌       | 7/28 [00:32<01:19,  3.76s/it]
+evaluate:  29%|██▊       | 8/28 [00:35<01:07,  3.39s/it]
+evaluate:  32%|███▏      | 9/28 [00:37<00:58,  3.06s/it]
+evaluate:  36%|███▌      | 10/28 [00:39<00:50,  2.81s/it]
+evaluate:  39%|███▉      | 11/28 [00:42<00:44,  2.59s/it]
+evaluate:  43%|████▎     | 12/28 [00:44<00:41,  2.56s/it]
+evaluate:  46%|████▋     | 13/28 [00:46<00:35,  2.34s/it]
+evaluate:  50%|█████     | 14/28 [00:48<00:33,  2.38s/it]
+evaluate:  54%|█████▎    | 15/28 [00:51<00:30,  2.33s/it]
+evaluate:  57%|█████▋    | 16/28 [00:53<00:27,  2.32s/it]
+evaluate:  61%|██████    | 17/28 [00:56<00:28,  2.60s/it]
+evaluate:  64%|██████▍   | 18/28 [01:02<00:34,  3.47s/it]
+evaluate:  68%|██████▊   | 19/28 [01:10<00:44,  4.93s/it]
+evaluate:  71%|███████▏  | 20/28 [01:12<00:33,  4.22s/it]
+evaluate:  75%|███████▌  | 21/28 [01:15<00:26,  3.85s/it]
+evaluate:  79%|███████▊  | 22/28 [01:18<00:20,  3.40s/it]
+evaluate:  82%|████████▏ | 23/28 [01:22<00:18,  3.65s/it]
+evaluate:  86%|████████▌ | 24/28 [01:26<00:14,  3.61s/it]
+evaluate:  89%|████████▉ | 25/28 [01:29<00:10,  3.47s/it]
+evaluate:  93%|█████████▎| 26/28 [01:31<00:06,  3.13s/it]
+evaluate:  96%|█████████▋| 27/28 [01:33<00:02,  2.86s/it]
+evaluate: 100%|██████████| 28/28 [01:35<00:00,  2.60s/it]
+evaluate: 100%|██████████| 28/28 [01:35<00:00,  3.42s/it]
+
+Evaluation finished
+Loss: 0.6438
+accuracy: 0.7273
+precision: 0.8000
+recall: 0.5926
+f1_score: 0.6809
+auc: 0.7116
+sensitivity: 0.5926
+specificity: 0.8571
+balanced_accuracy: 0.7249
+mcc: 0.4674
