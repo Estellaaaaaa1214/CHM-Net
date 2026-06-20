@@ -1,0 +1,2 @@
+dataset,model,acc_percent,auc_percent,f1_percent,sensitivity_percent,specificity_percent,source_log
+GBNPC2026,CHM-Net,67.75 +/- 2.46,69.69 +/- 1.19,66.47 +/- 4.19,64.74 +/- 6.80,70.64 +/- 2.95,logs/CHM-Net_GBNPC2026_training.log

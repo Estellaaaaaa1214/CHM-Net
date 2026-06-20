@@ -1,0 +1,8 @@
+numpy
+pandas
+scipy
+scikit-learn
+tqdm
+nibabel
+torch
+torchvision
