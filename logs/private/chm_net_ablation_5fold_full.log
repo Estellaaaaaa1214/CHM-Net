@@ -1,8 +1,4 @@
 nohup: ignoring input
-Loaded base model code from: macro_micro_density_mil.py
-Using preprocessed DMM tensor cache: Private3DCache/dmm128
-Experiment dir: MacroMicro_Ablation_5Fold_Output/MacroMicro_MIL_20260523_050800
-Device: cuda
 Image root: <PRIVATE_MRI_ROOT>
 Excel path: <PRIVATE_LABEL_FILE>
 Detector epochs: 100
