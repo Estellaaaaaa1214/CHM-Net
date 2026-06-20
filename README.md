@@ -1,6 +1,6 @@
-# CHM-Net on GBNPC2026
+# CHM-Net 
 
-This is the minimal anonymous release for CHM-Net on the GBNPC2026 MRI cohort.
+This is an anonymous release for CHM-Net on the GBNPC2026 MRI cohort.
 It contains the main CHM-Net training code, the reported training log, a compact
 metric table, and a synthetic label-file example.
 
