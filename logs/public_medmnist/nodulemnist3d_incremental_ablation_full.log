@@ -1,0 +1,742 @@
+nohup: ignoring input
+==========================================================================================
+MedMNIST3D incremental ablation
+==========================================================================================
+Run dir: MedMNIST3D_Incremental_Ablation_5Fold_Output/incremental_ablation_20260525_142201
+Device: cuda
+Datasets: ['nodule', 'adrenal']
+Variants: ['base', 'roi_mining', 'roi_gating', 'tri_planar', 'ab_mil', 'full']
+
+==========================================================================================
+Dataset: NoduleMNIST3D
+==========================================================================================
+Root: <PUBLIC_DATA_ROOT>
+Shape/intensity regularization: False
+Loading Nodule3DDataset split=train root=<PUBLIC_DATA_ROOT> download=True
+Loaded split=train, n=1158
+Loading Nodule3DDataset split=val root=<PUBLIC_DATA_ROOT> download=True
+Loaded split=val, n=165
+Loading Nodule3DDataset split=test root=<PUBLIC_DATA_ROOT> download=True
+Loaded split=test, n=310
+Total pooled samples: 1633
+Class distribution: [1232, 401]
+
+------------------------------------------------------------------------------------------
+NoduleMNIST3D 
+Train=1044, Val=262, Test=327 | train classes=[787, 257], val classes=[198, 64], test classes=[247, 80]
+
+Stage 1: detector pretraining
+pretrain detector 1/15: 100%|██████████| 66/66 [03:25<00:00,  3.12s/it, loss=0.5261]
+Detector epoch 1: train_loss=1.4268, val_loss=0.8978
+Saved detector best: val_loss=0.8978
+pretrain detector 2/15: 100%|██████████| 66/66 [03:36<00:00,  3.28s/it, loss=0.2630]
+Detector epoch 2: train_loss=0.8227, val_loss=0.7129
+Saved detector best: val_loss=0.7129
+pretrain detector 3/15: 100%|██████████| 66/66 [03:36<00:00,  3.28s/it, loss=0.3279]
+Detector epoch 3: train_loss=0.6514, val_loss=0.5372
+Saved detector best: val_loss=0.5372
+pretrain detector 4/15: 100%|██████████| 66/66 [03:28<00:00,  3.16s/it, loss=0.2128]
+Detector epoch 4: train_loss=0.5301, val_loss=0.4634
+Saved detector best: val_loss=0.4634
+pretrain detector 5/15: 100%|██████████| 66/66 [03:45<00:00,  3.41s/it, loss=0.0420]
+Detector epoch 5: train_loss=0.4452, val_loss=0.4380
+Saved detector best: val_loss=0.4380
+pretrain detector 6/15: 100%|██████████| 66/66 [03:49<00:00,  3.48s/it, loss=0.0059]
+Detector epoch 6: train_loss=0.3668, val_loss=0.3254
+Saved detector best: val_loss=0.3254
+pretrain detector 7/15: 100%|██████████| 66/66 [03:43<00:00,  3.39s/it, loss=0.0161]
+Detector epoch 7: train_loss=0.3330, val_loss=0.3854
+pretrain detector 8/15: 100%|██████████| 66/66 [03:42<00:00,  3.36s/it, loss=0.3379]
+Detector epoch 8: train_loss=0.3256, val_loss=0.2847
+Saved detector best: val_loss=0.2847
+pretrain detector 9/15: 100%|██████████| 66/66 [03:24<00:00,  3.09s/it, loss=0.1701]
+Detector epoch 9: train_loss=0.3122, val_loss=0.2597
+Saved detector best: val_loss=0.2597
+pretrain detector 10/15: 100%|██████████| 66/66 [03:32<00:00,  3.23s/it, loss=0.0192]
+Detector epoch 10: train_loss=0.2887, val_loss=0.2497
+Saved detector best: val_loss=0.2497
+pretrain detector 11/15: 100%|██████████| 66/66 [03:46<00:00,  3.43s/it, loss=0.0188]
+Detector epoch 11: train_loss=0.2646, val_loss=0.2624
+pretrain detector 12/15: 100%|██████████| 66/66 [03:39<00:00,  3.32s/it, loss=0.1568]
+Detector epoch 12: train_loss=0.2446, val_loss=0.2445
+Saved detector best: val_loss=0.2445
+pretrain detector 13/15: 100%|██████████| 66/66 [03:38<00:00,  3.31s/it, loss=0.0459]
+Detector epoch 13: train_loss=0.2284, val_loss=0.2299
+Saved detector best: val_loss=0.2299
+pretrain detector 14/15: 100%|██████████| 66/66 [03:35<00:00,  3.26s/it, loss=0.3748]
+Detector epoch 14: train_loss=0.2193, val_loss=0.2225
+Saved detector best: val_loss=0.2225
+pretrain detector 15/15: 100%|██████████| 66/66 [03:38<00:00,  3.32s/it, loss=0.0217]
+Detector epoch 15: train_loss=0.2211, val_loss=0.2156
+Saved detector best: val_loss=0.2156
+Loaded detector best from epoch 15
+
+Stage 2: base | fixed grid ROI + no gating + axial view + mean pooling + micro-only
+base train 1/50: 100%|██████████| 66/66 [03:35<00:00,  3.27s/it, acc=0.714, loss=0.8884]
+Epoch 1: train_loss=0.6230, train_acc=0.7136 | val_auc=0.8279, val_acc=0.7557, val_f1=0.5844, val_sens=0.7031, val_spec=0.7727
+Saved best: val_auc=0.8279, val_f1=0.5844
+base train 2/50: 100%|██████████| 66/66 [03:37<00:00,  3.29s/it, acc=0.780, loss=0.3575]
+Epoch 2: train_loss=0.5669, train_acc=0.7797 | val_auc=0.7768, val_acc=0.8015, val_f1=0.4800, val_sens=0.3750, val_spec=0.9394
+No improvement: 1/10
+base train 3/50: 100%|██████████| 66/66 [03:50<00:00,  3.49s/it, acc=0.764, loss=0.6533]
+Epoch 3: train_loss=0.5850, train_acc=0.7644 | val_auc=0.8882, val_acc=0.7977, val_f1=0.6667, val_sens=0.8281, val_spec=0.7879
+Saved best: val_auc=0.8882, val_f1=0.6667
+base train 4/50: 100%|██████████| 66/66 [03:44<00:00,  3.40s/it, acc=0.776, loss=0.2465]
+Epoch 4: train_loss=0.5571, train_acc=0.7759 | val_auc=0.8672, val_acc=0.8397, val_f1=0.6667, val_sens=0.6562, val_spec=0.8990
+No improvement: 1/10
+base train 5/50: 100%|██████████| 66/66 [04:01<00:00,  3.66s/it, acc=0.765, loss=0.8225]
+Epoch 5: train_loss=0.5824, train_acc=0.7653 | val_auc=0.9003, val_acc=0.8359, val_f1=0.7114, val_sens=0.8281, val_spec=0.8384
+Saved best: val_auc=0.9003, val_f1=0.7114
+base train 6/50: 100%|██████████| 66/66 [03:57<00:00,  3.60s/it, acc=0.799, loss=0.7733]
+Epoch 6: train_loss=0.5549, train_acc=0.7989 | val_auc=0.9020, val_acc=0.8244, val_f1=0.6933, val_sens=0.8125, val_spec=0.8283
+Saved best: val_auc=0.9020, val_f1=0.6933
+base train 7/50: 100%|██████████| 66/66 [04:13<00:00,  3.85s/it, acc=0.785, loss=0.7495]
+Epoch 7: train_loss=0.5344, train_acc=0.7854 | val_auc=0.9116, val_acc=0.8550, val_f1=0.7286, val_sens=0.7969, val_spec=0.8737
+Saved best: val_auc=0.9116, val_f1=0.7286
+base train 8/50: 100%|██████████| 66/66 [04:28<00:00,  4.06s/it, acc=0.775, loss=0.6642]
+Epoch 8: train_loss=0.5403, train_acc=0.7749 | val_auc=0.9155, val_acc=0.8244, val_f1=0.7125, val_sens=0.8906, val_spec=0.8030
+Saved best: val_auc=0.9155, val_f1=0.7125
+base train 9/50: 100%|██████████| 66/66 [04:07<00:00,  3.74s/it, acc=0.814, loss=0.5010]
+Epoch 9: train_loss=0.5285, train_acc=0.8142 | val_auc=0.8943, val_acc=0.8588, val_f1=0.7259, val_sens=0.7656, val_spec=0.8889
+No improvement: 1/10
+base train 10/50: 100%|██████████| 66/66 [03:30<00:00,  3.18s/it, acc=0.809, loss=0.2380]
+Epoch 10: train_loss=0.5278, train_acc=0.8094 | val_auc=0.8909, val_acc=0.8206, val_f1=0.6667, val_sens=0.7344, val_spec=0.8485
+No improvement: 2/10
+base train 11/50: 100%|██████████| 66/66 [03:36<00:00,  3.28s/it, acc=0.785, loss=0.5739]
+Epoch 11: train_loss=0.5460, train_acc=0.7854 | val_auc=0.8996, val_acc=0.8893, val_f1=0.7717, val_sens=0.7656, val_spec=0.9293
+No improvement: 3/10
+base train 12/50: 100%|██████████| 66/66 [03:31<00:00,  3.20s/it, acc=0.798, loss=0.6602]
+Epoch 12: train_loss=0.5175, train_acc=0.7979 | val_auc=0.8905, val_acc=0.8473, val_f1=0.7101, val_sens=0.7656, val_spec=0.8737
+No improvement: 4/10
+base train 13/50: 100%|██████████| 66/66 [03:29<00:00,  3.18s/it, acc=0.810, loss=0.4230]
+Epoch 13: train_loss=0.5478, train_acc=0.8103 | val_auc=0.9032, val_acc=0.8473, val_f1=0.7101, val_sens=0.7656, val_spec=0.8737
+No improvement: 5/10
+base train 14/50: 100%|██████████| 66/66 [03:19<00:00,  3.03s/it, acc=0.815, loss=0.4847]
+Epoch 14: train_loss=0.5119, train_acc=0.8151 | val_auc=0.8918, val_acc=0.8321, val_f1=0.7105, val_sens=0.8438, val_spec=0.8283
+No improvement: 6/10
+base train 15/50: 100%|██████████| 66/66 [03:29<00:00,  3.18s/it, acc=0.808, loss=0.5541]
+Epoch 15: train_loss=0.5107, train_acc=0.8084 | val_auc=0.9050, val_acc=0.8511, val_f1=0.7234, val_sens=0.7969, val_spec=0.8687
+No improvement: 7/10
+base train 16/50: 100%|██████████| 66/66 [03:26<00:00,  3.13s/it, acc=0.843, loss=0.3986]
+Epoch 16: train_loss=0.4978, train_acc=0.8429 | val_auc=0.9027, val_acc=0.8550, val_f1=0.7397, val_sens=0.8438, val_spec=0.8586
+No improvement: 8/10
+base train 17/50: 100%|██████████| 66/66 [03:26<00:00,  3.12s/it, acc=0.830, loss=0.2291]
+Epoch 17: train_loss=0.4996, train_acc=0.8295 | val_auc=0.9200, val_acc=0.8397, val_f1=0.7237, val_sens=0.8594, val_spec=0.8333
+Saved best: val_auc=0.9200, val_f1=0.7237
+base train 18/50: 100%|██████████| 66/66 [03:21<00:00,  3.05s/it, acc=0.820, loss=0.8859]
+Epoch 18: train_loss=0.5129, train_acc=0.8199 | val_auc=0.9044, val_acc=0.8550, val_f1=0.7286, val_sens=0.7969, val_spec=0.8737
+No improvement: 1/10
+base train 19/50: 100%|██████████| 66/66 [03:30<00:00,  3.19s/it, acc=0.827, loss=0.7749]
+Epoch 19: train_loss=0.4856, train_acc=0.8266 | val_auc=0.9005, val_acc=0.8626, val_f1=0.7188, val_sens=0.7188, val_spec=0.9091
+No improvement: 2/10
+base train 20/50: 100%|██████████| 66/66 [03:30<00:00,  3.18s/it, acc=0.830, loss=0.2086]
+Epoch 20: train_loss=0.4916, train_acc=0.8305 | val_auc=0.9028, val_acc=0.8321, val_f1=0.7067, val_sens=0.8281, val_spec=0.8333
+No improvement: 3/10
+base train 21/50: 100%|██████████| 66/66 [03:27<00:00,  3.14s/it, acc=0.832, loss=0.5742]
+Epoch 21: train_loss=0.4924, train_acc=0.8324 | val_auc=0.9125, val_acc=0.8550, val_f1=0.7397, val_sens=0.8438, val_spec=0.8586
+No improvement: 4/10
+base train 22/50: 100%|██████████| 66/66 [03:23<00:00,  3.08s/it, acc=0.807, loss=0.5805]
+Epoch 22: train_loss=0.5097, train_acc=0.8075 | val_auc=0.9052, val_acc=0.8626, val_f1=0.7353, val_sens=0.7812, val_spec=0.8889
+No improvement: 5/10
+base train 23/50: 100%|██████████| 66/66 [03:28<00:00,  3.16s/it, acc=0.831, loss=0.1997]
+Epoch 23: train_loss=0.5058, train_acc=0.8314 | val_auc=0.8999, val_acc=0.8511, val_f1=0.7273, val_sens=0.8125, val_spec=0.8636
+No improvement: 6/10
+base train 24/50: 100%|██████████| 66/66 [03:19<00:00,  3.03s/it, acc=0.846, loss=0.3847]
+Epoch 24: train_loss=0.4813, train_acc=0.8458 | val_auc=0.9053, val_acc=0.8511, val_f1=0.7234, val_sens=0.7969, val_spec=0.8687
+No improvement: 7/10
+base train 25/50: 100%|██████████| 66/66 [03:25<00:00,  3.11s/it, acc=0.841, loss=0.8829]
+Epoch 25: train_loss=0.4782, train_acc=0.8410 | val_auc=0.9083, val_acc=0.8740, val_f1=0.7519, val_sens=0.7812, val_spec=0.9040
+No improvement: 8/10
+base train 26/50: 100%|██████████| 66/66 [03:25<00:00,  3.11s/it, acc=0.831, loss=0.1679]
+Epoch 26: train_loss=0.4807, train_acc=0.8314 | val_auc=0.9187, val_acc=0.8588, val_f1=0.7299, val_sens=0.7812, val_spec=0.8838
+No improvement: 9/10
+base train 27/50: 100%|██████████| 66/66 [03:29<00:00,  3.17s/it, acc=0.833, loss=0.1589]
+Epoch 27: train_loss=0.4836, train_acc=0.8333 | val_auc=0.9067, val_acc=0.8702, val_f1=0.7571, val_sens=0.8281, val_spec=0.8838
+No improvement: 10/10
+Early stopped at epoch 27
+Test base: AUC=0.8800, ACC=0.7859, F1=0.6429, Sens=0.7875, Spec=0.7854
+
+Stage 2: roi_mining | Base + detector-guided ROI mining
+roi_mining train 1/50: 100%|██████████| 66/66 [03:33<00:00,  3.23s/it, acc=0.578, loss=0.7961]
+Epoch 1: train_loss=0.7019, train_acc=0.5776 | val_auc=0.5952, val_acc=0.6641, val_f1=0.3714, val_sens=0.4062, val_spec=0.7475
+Saved best: val_auc=0.5952, val_f1=0.3714
+roi_mining train 2/50: 100%|██████████| 66/66 [03:28<00:00,  3.17s/it, acc=0.598, loss=0.7944]
+Epoch 2: train_loss=0.7104, train_acc=0.5977 | val_auc=0.6676, val_acc=0.7519, val_f1=0.1772, val_sens=0.1094, val_spec=0.9596
+Saved best: val_auc=0.6676, val_f1=0.1772
+roi_mining train 3/50: 100%|██████████| 66/66 [03:33<00:00,  3.24s/it, acc=0.634, loss=0.6337]
+Epoch 3: train_loss=0.6779, train_acc=0.6341 | val_auc=0.6528, val_acc=0.4924, val_f1=0.4292, val_sens=0.7812, val_spec=0.3990
+No improvement: 1/10
+roi_mining train 4/50: 100%|██████████| 66/66 [03:29<00:00,  3.17s/it, acc=0.625, loss=0.5286]
+Epoch 4: train_loss=0.6750, train_acc=0.6245 | val_auc=0.6862, val_acc=0.6794, val_f1=0.4684, val_sens=0.5781, val_spec=0.7121
+Saved best: val_auc=0.6862, val_f1=0.4684
+roi_mining train 5/50: 100%|██████████| 66/66 [02:53<00:00,  2.64s/it, acc=0.654, loss=0.8382]
+Epoch 5: train_loss=0.6801, train_acc=0.6542 | val_auc=0.6987, val_acc=0.6031, val_f1=0.4583, val_sens=0.6875, val_spec=0.5758
+Saved best: val_auc=0.6987, val_f1=0.4583
+roi_mining train 6/50: 100%|██████████| 66/66 [03:25<00:00,  3.11s/it, acc=0.627, loss=0.6358]
+Epoch 6: train_loss=0.6753, train_acc=0.6274 | val_auc=0.7168, val_acc=0.7366, val_f1=0.3301, val_sens=0.2656, val_spec=0.8889
+Saved best: val_auc=0.7168, val_f1=0.3301
+roi_mining train 7/50: 100%|██████████| 66/66 [03:28<00:00,  3.16s/it, acc=0.676, loss=0.5255]
+Epoch 7: train_loss=0.6779, train_acc=0.6762 | val_auc=0.7383, val_acc=0.7595, val_f1=0.2921, val_sens=0.2031, val_spec=0.9394
+Saved best: val_auc=0.7383, val_f1=0.2921
+roi_mining train 8/50: 100%|██████████| 66/66 [03:35<00:00,  3.26s/it, acc=0.690, loss=0.5804]
+Epoch 8: train_loss=0.6640, train_acc=0.6897 | val_auc=0.7001, val_acc=0.7290, val_f1=0.4320, val_sens=0.4219, val_spec=0.8283
+No improvement: 1/10
+roi_mining train 9/50: 100%|██████████| 66/66 [03:30<00:00,  3.20s/it, acc=0.654, loss=0.6141]
+Epoch 9: train_loss=0.6651, train_acc=0.6542 | val_auc=0.6786, val_acc=0.7290, val_f1=0.3932, val_sens=0.3594, val_spec=0.8485
+No improvement: 2/10
+roi_mining train 10/50: 100%|██████████| 66/66 [03:36<00:00,  3.28s/it, acc=0.709, loss=0.7904]
+Epoch 10: train_loss=0.6796, train_acc=0.7088 | val_auc=0.7188, val_acc=0.7328, val_f1=0.3519, val_sens=0.2969, val_spec=0.8737
+No improvement: 3/10
+roi_mining train 11/50: 100%|██████████| 66/66 [03:34<00:00,  3.24s/it, acc=0.644, loss=0.8787]
+Epoch 11: train_loss=0.6680, train_acc=0.6437 | val_auc=0.7191, val_acc=0.7023, val_f1=0.1875, val_sens=0.1406, val_spec=0.8838
+No improvement: 4/10
+roi_mining train 12/50: 100%|██████████| 66/66 [03:31<00:00,  3.21s/it, acc=0.678, loss=0.8762]
+Epoch 12: train_loss=0.6597, train_acc=0.6782 | val_auc=0.7748, val_acc=0.7672, val_f1=0.4874, val_sens=0.4531, val_spec=0.8687
+Saved best: val_auc=0.7748, val_f1=0.4874
+roi_mining train 13/50: 100%|██████████| 66/66 [03:29<00:00,  3.17s/it, acc=0.702, loss=0.8944]
+Epoch 13: train_loss=0.6635, train_acc=0.7021 | val_auc=0.7678, val_acc=0.7328, val_f1=0.5333, val_sens=0.6250, val_spec=0.7677
+No improvement: 1/10
+roi_mining train 14/50: 100%|██████████| 66/66 [03:27<00:00,  3.15s/it, acc=0.677, loss=0.6288]
+Epoch 14: train_loss=0.6504, train_acc=0.6772 | val_auc=0.7493, val_acc=0.7061, val_f1=0.4901, val_sens=0.5781, val_spec=0.7475
+No improvement: 2/10
+roi_mining train 15/50: 100%|██████████| 66/66 [03:26<00:00,  3.13s/it, acc=0.643, loss=1.1239]
+Epoch 15: train_loss=0.6827, train_acc=0.6427 | val_auc=0.7160, val_acc=0.7214, val_f1=0.4341, val_sens=0.4375, val_spec=0.8131
+No improvement: 3/10
+roi_mining train 16/50: 100%|██████████| 66/66 [03:33<00:00,  3.23s/it, acc=0.651, loss=0.9710]
+Epoch 16: train_loss=0.6558, train_acc=0.6513 | val_auc=0.7387, val_acc=0.7519, val_f1=0.4628, val_sens=0.4375, val_spec=0.8535
+No improvement: 4/10
+roi_mining train 17/50: 100%|██████████| 66/66 [03:26<00:00,  3.13s/it, acc=0.650, loss=0.5592]
+Epoch 17: train_loss=0.6481, train_acc=0.6504 | val_auc=0.7327, val_acc=0.7519, val_f1=0.4538, val_sens=0.4219, val_spec=0.8586
+No improvement: 5/10
+roi_mining train 18/50: 100%|██████████| 66/66 [03:32<00:00,  3.22s/it, acc=0.714, loss=0.6408]
+Epoch 18: train_loss=0.6372, train_acc=0.7136 | val_auc=0.6618, val_acc=0.7290, val_f1=0.4320, val_sens=0.4219, val_spec=0.8283
+No improvement: 6/10
+roi_mining train 19/50: 100%|██████████| 66/66 [03:33<00:00,  3.24s/it, acc=0.713, loss=0.6648]
+Epoch 19: train_loss=0.6329, train_acc=0.7126 | val_auc=0.7693, val_acc=0.7481, val_f1=0.4923, val_sens=0.5000, val_spec=0.8283
+No improvement: 7/10
+roi_mining train 20/50: 100%|██████████| 66/66 [03:21<00:00,  3.06s/it, acc=0.703, loss=0.4718]
+Epoch 20: train_loss=0.6330, train_acc=0.7031 | val_auc=0.7715, val_acc=0.7786, val_f1=0.4912, val_sens=0.4375, val_spec=0.8889
+No improvement: 8/10
+roi_mining train 21/50: 100%|██████████| 66/66 [03:33<00:00,  3.24s/it, acc=0.723, loss=0.6327]
+Epoch 21: train_loss=0.6384, train_acc=0.7232 | val_auc=0.7449, val_acc=0.7214, val_f1=0.4748, val_sens=0.5156, val_spec=0.7879
+No improvement: 9/10
+roi_mining train 22/50: 100%|██████████| 66/66 [03:26<00:00,  3.13s/it, acc=0.678, loss=0.4203]
+Epoch 22: train_loss=0.6346, train_acc=0.6782 | val_auc=0.7720, val_acc=0.7481, val_f1=0.5075, val_sens=0.5312, val_spec=0.8182
+No improvement: 10/10
+Early stopped at epoch 22
+Test roi_mining: AUC=0.6530, ACC=0.6942, F1=0.3827, Sens=0.3875, Spec=0.7935
+
+Stage 2: roi_gating | Base + detector-guided ROI mining + ROI heatmap gating
+roi_gating train 1/50: 100%|██████████| 66/66 [03:34<00:00,  3.24s/it, acc=0.573, loss=0.5893]
+Epoch 1: train_loss=0.7068, train_acc=0.5728 | val_auc=0.6611, val_acc=0.7366, val_f1=0.2887, val_sens=0.2188, val_spec=0.9040
+Saved best: val_auc=0.6611, val_f1=0.2887
+roi_gating train 2/50: 100%|██████████| 66/66 [03:30<00:00,  3.18s/it, acc=0.619, loss=0.4966]
+Epoch 2: train_loss=0.6984, train_acc=0.6188 | val_auc=0.7095, val_acc=0.6298, val_f1=0.4813, val_sens=0.7031, val_spec=0.6061
+Saved best: val_auc=0.7095, val_f1=0.4813
+roi_gating train 3/50: 100%|██████████| 66/66 [04:01<00:00,  3.65s/it, acc=0.636, loss=0.5626]
+Epoch 3: train_loss=0.6812, train_acc=0.6360 | val_auc=0.7120, val_acc=0.6183, val_f1=0.4898, val_sens=0.7500, val_spec=0.5758
+Saved best: val_auc=0.7120, val_f1=0.4898
+roi_gating train 4/50: 100%|██████████| 66/66 [04:16<00:00,  3.89s/it, acc=0.642, loss=0.8297]
+Epoch 4: train_loss=0.6811, train_acc=0.6418 | val_auc=0.7341, val_acc=0.7481, val_f1=0.4107, val_sens=0.3594, val_spec=0.8737
+Saved best: val_auc=0.7341, val_f1=0.4107
+roi_gating train 5/50: 100%|██████████| 66/66 [04:17<00:00,  3.91s/it, acc=0.633, loss=0.8264]
+Epoch 5: train_loss=0.6751, train_acc=0.6331 | val_auc=0.6155, val_acc=0.6947, val_f1=0.3333, val_sens=0.3125, val_spec=0.8182
+No improvement: 1/10
+roi_gating train 6/50: 100%|██████████| 66/66 [04:27<00:00,  4.05s/it, acc=0.637, loss=0.5177]
+Epoch 6: train_loss=0.6731, train_acc=0.6370 | val_auc=0.7201, val_acc=0.6947, val_f1=0.4667, val_sens=0.5469, val_spec=0.7424
+No improvement: 2/10
+roi_gating train 7/50: 100%|██████████| 66/66 [03:59<00:00,  3.63s/it, acc=0.666, loss=0.4905]
+Epoch 7: train_loss=0.6676, train_acc=0.6657 | val_auc=0.7270, val_acc=0.7405, val_f1=0.4035, val_sens=0.3594, val_spec=0.8636
+No improvement: 3/10
+roi_gating train 8/50: 100%|██████████| 66/66 [03:56<00:00,  3.58s/it, acc=0.657, loss=0.7338]
+Epoch 8: train_loss=0.6663, train_acc=0.6571 | val_auc=0.7187, val_acc=0.6756, val_f1=0.4586, val_sens=0.5625, val_spec=0.7121
+No improvement: 4/10
+roi_gating train 9/50: 100%|██████████| 66/66 [03:49<00:00,  3.48s/it, acc=0.672, loss=0.5399]
+Epoch 9: train_loss=0.6605, train_acc=0.6724 | val_auc=0.7346, val_acc=0.7405, val_f1=0.3929, val_sens=0.3438, val_spec=0.8687
+No improvement: 5/10
+roi_gating train 10/50: 100%|██████████| 66/66 [03:46<00:00,  3.43s/it, acc=0.678, loss=0.6527]
+Epoch 10: train_loss=0.6656, train_acc=0.6782 | val_auc=0.7372, val_acc=0.7290, val_f1=0.4409, val_sens=0.4375, val_spec=0.8232
+Saved best: val_auc=0.7372, val_f1=0.4409
+roi_gating train 11/50: 100%|██████████| 66/66 [03:45<00:00,  3.41s/it, acc=0.676, loss=0.5915]
+Epoch 11: train_loss=0.6556, train_acc=0.6762 | val_auc=0.7352, val_acc=0.7519, val_f1=0.4037, val_sens=0.3438, val_spec=0.8838
+No improvement: 1/10
+roi_gating train 12/50: 100%|██████████| 66/66 [03:51<00:00,  3.50s/it, acc=0.732, loss=0.6398]
+Epoch 12: train_loss=0.6517, train_acc=0.7318 | val_auc=0.7433, val_acc=0.7519, val_f1=0.4628, val_sens=0.4375, val_spec=0.8535
+Saved best: val_auc=0.7433, val_f1=0.4628
+roi_gating train 13/50: 100%|██████████| 66/66 [03:46<00:00,  3.43s/it, acc=0.670, loss=0.6544]
+Epoch 13: train_loss=0.6693, train_acc=0.6705 | val_auc=0.7371, val_acc=0.7405, val_f1=0.5143, val_sens=0.5625, val_spec=0.7980
+No improvement: 1/10
+roi_gating train 14/50: 100%|██████████| 66/66 [03:50<00:00,  3.49s/it, acc=0.650, loss=0.4300]
+Epoch 14: train_loss=0.6611, train_acc=0.6504 | val_auc=0.7400, val_acc=0.7023, val_f1=0.5000, val_sens=0.6094, val_spec=0.7323
+No improvement: 2/10
+roi_gating train 15/50: 100%|██████████| 66/66 [03:49<00:00,  3.48s/it, acc=0.685, loss=0.3742]
+Epoch 15: train_loss=0.6396, train_acc=0.6849 | val_auc=0.7004, val_acc=0.6756, val_f1=0.4138, val_sens=0.4688, val_spec=0.7424
+No improvement: 3/10
+roi_gating train 16/50: 100%|██████████| 66/66 [03:48<00:00,  3.46s/it, acc=0.644, loss=0.5609]
+Epoch 16: train_loss=0.6546, train_acc=0.6437 | val_auc=0.7412, val_acc=0.7405, val_f1=0.5143, val_sens=0.5625, val_spec=0.7980
+No improvement: 4/10
+roi_gating train 17/50: 100%|██████████| 66/66 [03:43<00:00,  3.39s/it, acc=0.670, loss=0.8537]
+Epoch 17: train_loss=0.6504, train_acc=0.6695 | val_auc=0.7683, val_acc=0.7443, val_f1=0.5180, val_sens=0.5625, val_spec=0.8030
+Saved best: val_auc=0.7683, val_f1=0.5180
+roi_gating train 18/50: 100%|██████████| 66/66 [03:46<00:00,  3.44s/it, acc=0.667, loss=0.5070]
+Epoch 18: train_loss=0.6470, train_acc=0.6667 | val_auc=0.7378, val_acc=0.7252, val_f1=0.5135, val_sens=0.5938, val_spec=0.7677
+No improvement: 1/10
+roi_gating train 19/50: 100%|██████████| 66/66 [03:48<00:00,  3.46s/it, acc=0.666, loss=0.5594]
+Epoch 19: train_loss=0.6457, train_acc=0.6657 | val_auc=0.7768, val_acc=0.7328, val_f1=0.4615, val_sens=0.4688, val_spec=0.8182
+Saved best: val_auc=0.7768, val_f1=0.4615
+roi_gating train 20/50: 100%|██████████| 66/66 [03:49<00:00,  3.48s/it, acc=0.691, loss=1.0376]
+Epoch 20: train_loss=0.6523, train_acc=0.6906 | val_auc=0.6929, val_acc=0.6908, val_f1=0.4636, val_sens=0.5469, val_spec=0.7374
+No improvement: 1/10
+roi_gating train 21/50: 100%|██████████| 66/66 [03:40<00:00,  3.34s/it, acc=0.677, loss=1.0229]
+Epoch 21: train_loss=0.6543, train_acc=0.6772 | val_auc=0.7515, val_acc=0.7366, val_f1=0.5175, val_sens=0.5781, val_spec=0.7879
+No improvement: 2/10
+roi_gating train 22/50: 100%|██████████| 66/66 [03:46<00:00,  3.44s/it, acc=0.685, loss=0.6107]
+Epoch 22: train_loss=0.6386, train_acc=0.6849 | val_auc=0.7798, val_acc=0.7595, val_f1=0.4324, val_sens=0.3750, val_spec=0.8838
+Saved best: val_auc=0.7798, val_f1=0.4324
+roi_gating train 23/50: 100%|██████████| 66/66 [03:42<00:00,  3.38s/it, acc=0.711, loss=0.7387]
+Epoch 23: train_loss=0.6394, train_acc=0.7107 | val_auc=0.7806, val_acc=0.7214, val_f1=0.5409, val_sens=0.6719, val_spec=0.7374
+Saved best: val_auc=0.7806, val_f1=0.5409
+roi_gating train 24/50: 100%|██████████| 66/66 [03:48<00:00,  3.46s/it, acc=0.706, loss=0.5305]
+Epoch 24: train_loss=0.6291, train_acc=0.7059 | val_auc=0.7749, val_acc=0.7290, val_f1=0.5035, val_sens=0.5625, val_spec=0.7828
+No improvement: 1/10
+roi_gating train 25/50: 100%|██████████| 66/66 [03:40<00:00,  3.33s/it, acc=0.707, loss=0.6068]
+Epoch 25: train_loss=0.6288, train_acc=0.7069 | val_auc=0.7407, val_acc=0.7863, val_f1=0.5410, val_sens=0.5156, val_spec=0.8737
+No improvement: 2/10
+roi_gating train 26/50: 100%|██████████| 66/66 [03:56<00:00,  3.58s/it, acc=0.730, loss=0.5348]
+Epoch 26: train_loss=0.6312, train_acc=0.7299 | val_auc=0.7637, val_acc=0.6679, val_f1=0.5029, val_sens=0.6875, val_spec=0.6616
+No improvement: 3/10
+roi_gating train 27/50: 100%|██████████| 66/66 [03:49<00:00,  3.48s/it, acc=0.701, loss=0.4210]
+Epoch 27: train_loss=0.6374, train_acc=0.7011 | val_auc=0.7668, val_acc=0.7519, val_f1=0.4882, val_sens=0.4844, val_spec=0.8384
+No improvement: 4/10
+roi_gating train 28/50: 100%|██████████| 66/66 [03:48<00:00,  3.46s/it, acc=0.734, loss=0.5481]
+Epoch 28: train_loss=0.6097, train_acc=0.7337 | val_auc=0.7615, val_acc=0.6908, val_f1=0.5031, val_sens=0.6406, val_spec=0.7071
+No improvement: 5/10
+roi_gating train 29/50: 100%|██████████| 66/66 [03:45<00:00,  3.42s/it, acc=0.680, loss=0.6455]
+Epoch 29: train_loss=0.6287, train_acc=0.6801 | val_auc=0.7792, val_acc=0.7786, val_f1=0.5000, val_sens=0.4531, val_spec=0.8838
+No improvement: 6/10
+roi_gating train 30/50: 100%|██████████| 66/66 [03:52<00:00,  3.52s/it, acc=0.749, loss=0.6730]
+Epoch 30: train_loss=0.6195, train_acc=0.7490 | val_auc=0.8058, val_acc=0.7824, val_f1=0.5778, val_sens=0.6094, val_spec=0.8384
+Saved best: val_auc=0.8058, val_f1=0.5778
+roi_gating train 31/50: 100%|██████████| 66/66 [03:39<00:00,  3.33s/it, acc=0.706, loss=0.6080]
+Epoch 31: train_loss=0.6157, train_acc=0.7059 | val_auc=0.8017, val_acc=0.7748, val_f1=0.5693, val_sens=0.6094, val_spec=0.8283
+No improvement: 1/10
+roi_gating train 32/50: 100%|██████████| 66/66 [03:35<00:00,  3.26s/it, acc=0.713, loss=1.0454]
+Epoch 32: train_loss=0.6287, train_acc=0.7126 | val_auc=0.7926, val_acc=0.7252, val_f1=0.5663, val_sens=0.7344, val_spec=0.7222
+No improvement: 2/10
+roi_gating train 33/50: 100%|██████████| 66/66 [03:44<00:00,  3.40s/it, acc=0.717, loss=0.6416]
+Epoch 33: train_loss=0.6122, train_acc=0.7174 | val_auc=0.7966, val_acc=0.7519, val_f1=0.5113, val_sens=0.5312, val_spec=0.8232
+No improvement: 3/10
+roi_gating train 34/50: 100%|██████████| 66/66 [03:35<00:00,  3.27s/it, acc=0.722, loss=0.5804]
+Epoch 34: train_loss=0.6139, train_acc=0.7222 | val_auc=0.8235, val_acc=0.7824, val_f1=0.5778, val_sens=0.6094, val_spec=0.8384
+Saved best: val_auc=0.8235, val_f1=0.5778
+roi_gating train 35/50: 100%|██████████| 66/66 [03:42<00:00,  3.36s/it, acc=0.724, loss=0.5995]
+Epoch 35: train_loss=0.6073, train_acc=0.7241 | val_auc=0.8175, val_acc=0.7901, val_f1=0.5736, val_sens=0.5781, val_spec=0.8586
+No improvement: 1/10
+roi_gating train 36/50: 100%|██████████| 66/66 [03:37<00:00,  3.30s/it, acc=0.724, loss=0.2950]
+Epoch 36: train_loss=0.6038, train_acc=0.7241 | val_auc=0.8037, val_acc=0.7634, val_f1=0.5373, val_sens=0.5625, val_spec=0.8283
+No improvement: 2/10
+roi_gating train 37/50: 100%|██████████| 66/66 [03:38<00:00,  3.32s/it, acc=0.731, loss=0.4554]
+Epoch 37: train_loss=0.6121, train_acc=0.7308 | val_auc=0.8130, val_acc=0.7595, val_f1=0.5116, val_sens=0.5156, val_spec=0.8384
+No improvement: 3/10
+roi_gating train 38/50: 100%|██████████| 66/66 [03:32<00:00,  3.21s/it, acc=0.723, loss=0.6748]
+Epoch 38: train_loss=0.6270, train_acc=0.7232 | val_auc=0.8067, val_acc=0.7595, val_f1=0.5655, val_sens=0.6406, val_spec=0.7980
+No improvement: 4/10
+roi_gating train 39/50: 100%|██████████| 66/66 [03:44<00:00,  3.40s/it, acc=0.690, loss=0.4851]
+Epoch 39: train_loss=0.6250, train_acc=0.6897 | val_auc=0.8163, val_acc=0.7901, val_f1=0.5985, val_sens=0.6406, val_spec=0.8384
+No improvement: 5/10
+roi_gating train 40/50: 100%|██████████| 66/66 [03:35<00:00,  3.27s/it, acc=0.732, loss=0.7914]
+Epoch 40: train_loss=0.6084, train_acc=0.7318 | val_auc=0.8068, val_acc=0.7366, val_f1=0.5714, val_sens=0.7188, val_spec=0.7424
+No improvement: 6/10
+roi_gating train 41/50: 100%|██████████| 66/66 [03:46<00:00,  3.43s/it, acc=0.722, loss=0.4721]
+Epoch 41: train_loss=0.5983, train_acc=0.7222 | val_auc=0.8224, val_acc=0.7939, val_f1=0.5846, val_sens=0.5938, val_spec=0.8586
+No improvement: 7/10
+roi_gating train 42/50: 100%|██████████| 66/66 [03:36<00:00,  3.28s/it, acc=0.743, loss=0.7462]
+Epoch 42: train_loss=0.5987, train_acc=0.7433 | val_auc=0.8270, val_acc=0.8015, val_f1=0.5938, val_sens=0.5938, val_spec=0.8687
+Saved best: val_auc=0.8270, val_f1=0.5938
+roi_gating train 43/50: 100%|██████████| 66/66 [03:46<00:00,  3.44s/it, acc=0.719, loss=0.5876]
+Epoch 43: train_loss=0.6047, train_acc=0.7193 | val_auc=0.8249, val_acc=0.7939, val_f1=0.6087, val_sens=0.6562, val_spec=0.8384
+No improvement: 1/10
+roi_gating train 44/50: 100%|██████████| 66/66 [03:44<00:00,  3.41s/it, acc=0.751, loss=1.2219]
+Epoch 44: train_loss=0.5925, train_acc=0.7510 | val_auc=0.8269, val_acc=0.8015, val_f1=0.6119, val_sens=0.6406, val_spec=0.8535
+Saved best: val_auc=0.8269, val_f1=0.6119
+roi_gating train 45/50: 100%|██████████| 66/66 [03:37<00:00,  3.30s/it, acc=0.759, loss=0.3178]
+Epoch 45: train_loss=0.5940, train_acc=0.7586 | val_auc=0.8279, val_acc=0.8053, val_f1=0.5641, val_sens=0.5156, val_spec=0.8990
+No improvement: 1/10
+roi_gating train 46/50: 100%|██████████| 66/66 [03:45<00:00,  3.42s/it, acc=0.724, loss=0.3881]
+Epoch 46: train_loss=0.6027, train_acc=0.7241 | val_auc=0.8262, val_acc=0.7634, val_f1=0.5753, val_sens=0.6562, val_spec=0.7980
+No improvement: 2/10
+roi_gating train 47/50: 100%|██████████| 66/66 [03:36<00:00,  3.28s/it, acc=0.744, loss=0.4452]
+Epoch 47: train_loss=0.6068, train_acc=0.7443 | val_auc=0.8202, val_acc=0.7863, val_f1=0.5625, val_sens=0.5625, val_spec=0.8586
+No improvement: 3/10
+roi_gating train 48/50: 100%|██████████| 66/66 [03:42<00:00,  3.37s/it, acc=0.732, loss=0.4559]
+Epoch 48: train_loss=0.5944, train_acc=0.7318 | val_auc=0.8158, val_acc=0.7672, val_f1=0.5734, val_sens=0.6406, val_spec=0.8081
+No improvement: 4/10
+roi_gating train 49/50: 100%|██████████| 66/66 [03:43<00:00,  3.38s/it, acc=0.750, loss=0.4858]
+Epoch 49: train_loss=0.5905, train_acc=0.7500 | val_auc=0.8324, val_acc=0.7901, val_f1=0.6043, val_sens=0.6562, val_spec=0.8333
+Saved best: val_auc=0.8324, val_f1=0.6043
+roi_gating train 50/50: 100%|██████████| 66/66 [03:36<00:00,  3.28s/it, acc=0.748, loss=0.8820]
+Epoch 50: train_loss=0.5872, train_acc=0.7481 | val_auc=0.8254, val_acc=0.7672, val_f1=0.5906, val_sens=0.6875, val_spec=0.7929
+No improvement: 1/10
+Test roi_gating: AUC=0.7358, ACC=0.7278, F1=0.4972, Sens=0.5500, Spec=0.7854
+
+Stage 2: tri_planar | Base + detector-guided ROI mining + gating + tri-planar encoder
+tri_planar train 1/50: 100%|██████████| 66/66 [03:39<00:00,  3.33s/it, acc=0.618, loss=0.6432]
+Epoch 1: train_loss=0.7067, train_acc=0.6178 | val_auc=0.6473, val_acc=0.6832, val_f1=0.4276, val_sens=0.4844, val_spec=0.7475
+Saved best: val_auc=0.6473, val_f1=0.4276
+tri_planar train 2/50: 100%|██████████| 66/66 [03:39<00:00,  3.32s/it, acc=0.650, loss=0.7596]
+Epoch 2: train_loss=0.6785, train_acc=0.6504 | val_auc=0.6730, val_acc=0.7519, val_f1=0.4348, val_sens=0.3906, val_spec=0.8687
+Saved best: val_auc=0.6730, val_f1=0.4348
+tri_planar train 3/50: 100%|██████████| 66/66 [03:37<00:00,  3.29s/it, acc=0.657, loss=0.6096]
+Epoch 3: train_loss=0.6763, train_acc=0.6571 | val_auc=0.7262, val_acc=0.7863, val_f1=0.5333, val_sens=0.5000, val_spec=0.8788
+Saved best: val_auc=0.7262, val_f1=0.5333
+tri_planar train 4/50: 100%|██████████| 66/66 [03:42<00:00,  3.37s/it, acc=0.674, loss=0.7403]
+Epoch 4: train_loss=0.6691, train_acc=0.6743 | val_auc=0.7310, val_acc=0.7099, val_f1=0.4795, val_sens=0.5469, val_spec=0.7626
+Saved best: val_auc=0.7310, val_f1=0.4795
+tri_planar train 5/50: 100%|██████████| 66/66 [03:38<00:00,  3.31s/it, acc=0.664, loss=0.8202]
+Epoch 5: train_loss=0.6495, train_acc=0.6638 | val_auc=0.7252, val_acc=0.7481, val_f1=0.4677, val_sens=0.4531, val_spec=0.8434
+No improvement: 1/10
+tri_planar train 6/50: 100%|██████████| 66/66 [03:35<00:00,  3.27s/it, acc=0.705, loss=0.7094]
+Epoch 6: train_loss=0.6322, train_acc=0.7050 | val_auc=0.7419, val_acc=0.7481, val_f1=0.5352, val_sens=0.5938, val_spec=0.7980
+Saved best: val_auc=0.7419, val_f1=0.5352
+tri_planar train 7/50: 100%|██████████| 66/66 [03:47<00:00,  3.44s/it, acc=0.735, loss=0.3563]
+Epoch 7: train_loss=0.6209, train_acc=0.7347 | val_auc=0.7244, val_acc=0.6641, val_f1=0.4699, val_sens=0.6094, val_spec=0.6818
+No improvement: 1/10
+tri_planar train 8/50: 100%|██████████| 66/66 [03:37<00:00,  3.29s/it, acc=0.723, loss=0.7515]
+Epoch 8: train_loss=0.6230, train_acc=0.7232 | val_auc=0.7464, val_acc=0.7863, val_f1=0.5254, val_sens=0.4844, val_spec=0.8838
+Saved best: val_auc=0.7464, val_f1=0.5254
+tri_planar train 9/50: 100%|██████████| 66/66 [03:41<00:00,  3.35s/it, acc=0.725, loss=0.9869]
+Epoch 9: train_loss=0.6302, train_acc=0.7251 | val_auc=0.7509, val_acc=0.7634, val_f1=0.5373, val_sens=0.5625, val_spec=0.8283
+Saved best: val_auc=0.7509, val_f1=0.5373
+tri_planar train 10/50: 100%|██████████| 66/66 [03:43<00:00,  3.39s/it, acc=0.703, loss=0.8530]
+Epoch 10: train_loss=0.6422, train_acc=0.7031 | val_auc=0.7708, val_acc=0.7901, val_f1=0.4660, val_sens=0.3750, val_spec=0.9242
+Saved best: val_auc=0.7708, val_f1=0.4660
+tri_planar train 11/50: 100%|██████████| 66/66 [04:16<00:00,  3.89s/it, acc=0.747, loss=0.5349]
+Epoch 11: train_loss=0.6104, train_acc=0.7471 | val_auc=0.7877, val_acc=0.7595, val_f1=0.5191, val_sens=0.5312, val_spec=0.8333
+Saved best: val_auc=0.7877, val_f1=0.5191
+tri_planar train 12/50: 100%|██████████| 66/66 [04:35<00:00,  4.17s/it, acc=0.727, loss=0.6306]
+Epoch 12: train_loss=0.6260, train_acc=0.7270 | val_auc=0.7513, val_acc=0.7710, val_f1=0.4643, val_sens=0.4062, val_spec=0.8889
+No improvement: 1/10
+tri_planar train 13/50: 100%|██████████| 66/66 [04:15<00:00,  3.87s/it, acc=0.736, loss=0.7756]
+Epoch 13: train_loss=0.6187, train_acc=0.7356 | val_auc=0.7999, val_acc=0.7901, val_f1=0.5865, val_sens=0.6094, val_spec=0.8485
+Saved best: val_auc=0.7999, val_f1=0.5865
+tri_planar train 14/50: 100%|██████████| 66/66 [03:36<00:00,  3.28s/it, acc=0.739, loss=0.7301]
+Epoch 14: train_loss=0.6155, train_acc=0.7385 | val_auc=0.8048, val_acc=0.7710, val_f1=0.5833, val_sens=0.6562, val_spec=0.8081
+Saved best: val_auc=0.8048, val_f1=0.5833
+tri_planar train 15/50: 100%|██████████| 66/66 [03:37<00:00,  3.30s/it, acc=0.753, loss=0.6366]
+Epoch 15: train_loss=0.6166, train_acc=0.7529 | val_auc=0.7976, val_acc=0.7672, val_f1=0.5850, val_sens=0.6719, val_spec=0.7980
+No improvement: 1/10
+tri_planar train 16/50: 100%|██████████| 66/66 [03:32<00:00,  3.22s/it, acc=0.719, loss=0.4579]
+Epoch 16: train_loss=0.6082, train_acc=0.7193 | val_auc=0.7675, val_acc=0.7519, val_f1=0.5255, val_sens=0.5625, val_spec=0.8131
+No improvement: 2/10
+tri_planar train 17/50: 100%|██████████| 66/66 [03:28<00:00,  3.16s/it, acc=0.729, loss=0.6075]
+Epoch 17: train_loss=0.6121, train_acc=0.7289 | val_auc=0.7873, val_acc=0.7366, val_f1=0.5490, val_sens=0.6562, val_spec=0.7626
+No improvement: 3/10
+tri_planar train 18/50: 100%|██████████| 66/66 [03:27<00:00,  3.14s/it, acc=0.731, loss=1.0589]
+Epoch 18: train_loss=0.6091, train_acc=0.7308 | val_auc=0.7859, val_acc=0.6603, val_f1=0.5340, val_sens=0.7969, val_spec=0.6162
+No improvement: 4/10
+tri_planar train 19/50: 100%|██████████| 66/66 [03:31<00:00,  3.21s/it, acc=0.718, loss=0.6269]
+Epoch 19: train_loss=0.6068, train_acc=0.7184 | val_auc=0.7643, val_acc=0.7443, val_f1=0.5442, val_sens=0.6250, val_spec=0.7828
+No improvement: 5/10
+tri_planar train 20/50: 100%|██████████| 66/66 [03:28<00:00,  3.16s/it, acc=0.754, loss=0.6787]
+Epoch 20: train_loss=0.6036, train_acc=0.7538 | val_auc=0.7951, val_acc=0.7481, val_f1=0.5417, val_sens=0.6094, val_spec=0.7929
+No improvement: 6/10
+tri_planar train 21/50: 100%|██████████| 66/66 [02:56<00:00,  2.67s/it, acc=0.727, loss=0.7341]
+Epoch 21: train_loss=0.5965, train_acc=0.7270 | val_auc=0.8012, val_acc=0.7710, val_f1=0.5714, val_sens=0.6250, val_spec=0.8182
+No improvement: 7/10
+tri_planar train 22/50: 100%|██████████| 66/66 [03:09<00:00,  2.86s/it, acc=0.755, loss=0.5906]
+Epoch 22: train_loss=0.5883, train_acc=0.7548 | val_auc=0.8038, val_acc=0.7672, val_f1=0.5850, val_sens=0.6719, val_spec=0.7980
+Saved best: val_auc=0.8038, val_f1=0.5850
+tri_planar train 23/50: 100%|██████████| 66/66 [03:25<00:00,  3.12s/it, acc=0.744, loss=0.8016]
+Epoch 23: train_loss=0.5835, train_acc=0.7443 | val_auc=0.7935, val_acc=0.7214, val_f1=0.5576, val_sens=0.7188, val_spec=0.7222
+No improvement: 1/10
+tri_planar train 24/50: 100%|██████████| 66/66 [03:24<00:00,  3.10s/it, acc=0.737, loss=0.4247]
+Epoch 24: train_loss=0.5988, train_acc=0.7366 | val_auc=0.8084, val_acc=0.7481, val_f1=0.5658, val_sens=0.6719, val_spec=0.7727
+Saved best: val_auc=0.8084, val_f1=0.5658
+tri_planar train 25/50: 100%|██████████| 66/66 [03:24<00:00,  3.11s/it, acc=0.748, loss=0.6025]
+Epoch 25: train_loss=0.5896, train_acc=0.7481 | val_auc=0.8232, val_acc=0.7290, val_f1=0.5799, val_sens=0.7656, val_spec=0.7172
+Saved best: val_auc=0.8232, val_f1=0.5799
+tri_planar train 26/50: 100%|██████████| 66/66 [03:19<00:00,  3.03s/it, acc=0.745, loss=0.5923]
+Epoch 26: train_loss=0.5917, train_acc=0.7452 | val_auc=0.7891, val_acc=0.7519, val_f1=0.5638, val_sens=0.6562, val_spec=0.7828
+No improvement: 1/10
+tri_planar train 27/50: 100%|██████████| 66/66 [03:31<00:00,  3.20s/it, acc=0.753, loss=0.3167]
+Epoch 27: train_loss=0.5751, train_acc=0.7529 | val_auc=0.7955, val_acc=0.7328, val_f1=0.5455, val_sens=0.6562, val_spec=0.7576
+No improvement: 2/10
+tri_planar train 28/50: 100%|██████████| 66/66 [03:31<00:00,  3.20s/it, acc=0.771, loss=0.6071]
+Epoch 28: train_loss=0.5474, train_acc=0.7711 | val_auc=0.7992, val_acc=0.7748, val_f1=0.5931, val_sens=0.6719, val_spec=0.8081
+No improvement: 3/10
+tri_planar train 29/50: 100%|██████████| 66/66 [03:27<00:00,  3.14s/it, acc=0.782, loss=0.4790]
+Epoch 29: train_loss=0.5684, train_acc=0.7816 | val_auc=0.8163, val_acc=0.7748, val_f1=0.5426, val_sens=0.5469, val_spec=0.8485
+No improvement: 4/10
+tri_planar train 30/50: 100%|██████████| 66/66 [03:28<00:00,  3.17s/it, acc=0.775, loss=0.2838]
+Epoch 30: train_loss=0.5597, train_acc=0.7749 | val_auc=0.7856, val_acc=0.7137, val_f1=0.5033, val_sens=0.5938, val_spec=0.7525
+No improvement: 5/10
+tri_planar train 31/50: 100%|██████████| 66/66 [03:28<00:00,  3.16s/it, acc=0.762, loss=0.1916]
+Epoch 31: train_loss=0.5809, train_acc=0.7625 | val_auc=0.7796, val_acc=0.7252, val_f1=0.5325, val_sens=0.6406, val_spec=0.7525
+No improvement: 6/10
+tri_planar train 32/50: 100%|██████████| 66/66 [03:27<00:00,  3.15s/it, acc=0.764, loss=0.5701]
+Epoch 32: train_loss=0.5751, train_acc=0.7644 | val_auc=0.7801, val_acc=0.7366, val_f1=0.5490, val_sens=0.6562, val_spec=0.7626
+No improvement: 7/10
+tri_planar train 33/50: 100%|██████████| 66/66 [03:38<00:00,  3.31s/it, acc=0.774, loss=0.4005]
+Epoch 33: train_loss=0.5687, train_acc=0.7739 | val_auc=0.8063, val_acc=0.7634, val_f1=0.5694, val_sens=0.6406, val_spec=0.8030
+No improvement: 8/10
+tri_planar train 34/50: 100%|██████████| 66/66 [03:24<00:00,  3.10s/it, acc=0.770, loss=0.3194]
+Epoch 34: train_loss=0.5602, train_acc=0.7701 | val_auc=0.8106, val_acc=0.7481, val_f1=0.5479, val_sens=0.6250, val_spec=0.7879
+No improvement: 9/10
+tri_planar train 35/50: 100%|██████████| 66/66 [03:32<00:00,  3.22s/it, acc=0.784, loss=0.6796]
+Epoch 35: train_loss=0.5651, train_acc=0.7845 | val_auc=0.8165, val_acc=0.7595, val_f1=0.5532, val_sens=0.6094, val_spec=0.8081
+No improvement: 10/10
+Early stopped at epoch 35
+Test tri_planar: AUC=0.7704, ACC=0.6881, F1=0.5189, Sens=0.6875, Spec=0.6883
+
+Stage 2: ab_mil | Base + detector-guided ROI mining + gating + tri-planar encoder + attention MIL
+ab_mil train 1/50: 100%|██████████| 66/66 [03:22<00:00,  3.06s/it, acc=0.612, loss=0.8334]
+Epoch 1: train_loss=0.7006, train_acc=0.6121 | val_auc=0.6941, val_acc=0.6794, val_f1=0.4474, val_sens=0.5312, val_spec=0.7273
+Saved best: val_auc=0.6941, val_f1=0.4474
+ab_mil train 2/50: 100%|██████████| 66/66 [03:33<00:00,  3.24s/it, acc=0.651, loss=0.4119]
+Epoch 2: train_loss=0.6774, train_acc=0.6513 | val_auc=0.7240, val_acc=0.7214, val_f1=0.5101, val_sens=0.5938, val_spec=0.7626
+Saved best: val_auc=0.7240, val_f1=0.5101
+ab_mil train 3/50: 100%|██████████| 66/66 [03:25<00:00,  3.12s/it, acc=0.662, loss=0.9027]
+Epoch 3: train_loss=0.6772, train_acc=0.6619 | val_auc=0.6841, val_acc=0.6527, val_f1=0.4551, val_sens=0.5938, val_spec=0.6717
+No improvement: 1/10
+ab_mil train 4/50: 100%|██████████| 66/66 [03:29<00:00,  3.17s/it, acc=0.593, loss=0.5612]
+Epoch 4: train_loss=0.6719, train_acc=0.5929 | val_auc=0.6682, val_acc=0.5840, val_f1=0.4293, val_sens=0.6406, val_spec=0.5657
+No improvement: 2/10
+ab_mil train 5/50: 100%|██████████| 66/66 [03:32<00:00,  3.22s/it, acc=0.699, loss=0.5702]
+Epoch 5: train_loss=0.6510, train_acc=0.6992 | val_auc=0.7076, val_acc=0.7214, val_f1=0.4593, val_sens=0.4844, val_spec=0.7980
+No improvement: 3/10
+ab_mil train 6/50: 100%|██████████| 66/66 [03:25<00:00,  3.12s/it, acc=0.739, loss=0.8246]
+Epoch 6: train_loss=0.6315, train_acc=0.7395 | val_auc=0.6867, val_acc=0.7672, val_f1=0.3297, val_sens=0.2344, val_spec=0.9394
+No improvement: 4/10
+ab_mil train 7/50: 100%|██████████| 66/66 [03:29<00:00,  3.18s/it, acc=0.703, loss=0.7522]
+Epoch 7: train_loss=0.6443, train_acc=0.7031 | val_auc=0.7119, val_acc=0.7863, val_f1=0.3171, val_sens=0.2031, val_spec=0.9747
+No improvement: 5/10
+ab_mil train 8/50: 100%|██████████| 66/66 [03:17<00:00,  2.99s/it, acc=0.709, loss=0.3614]
+Epoch 8: train_loss=0.6372, train_acc=0.7088 | val_auc=0.6970, val_acc=0.6489, val_f1=0.4458, val_sens=0.5781, val_spec=0.6717
+No improvement: 6/10
+ab_mil train 9/50: 100%|██████████| 66/66 [03:21<00:00,  3.06s/it, acc=0.717, loss=0.4203]
+Epoch 9: train_loss=0.6183, train_acc=0.7174 | val_auc=0.7360, val_acc=0.7290, val_f1=0.4818, val_sens=0.5156, val_spec=0.7980
+Saved best: val_auc=0.7360, val_f1=0.4818
+ab_mil train 10/50: 100%|██████████| 66/66 [03:15<00:00,  2.97s/it, acc=0.709, loss=0.5658]
+Epoch 10: train_loss=0.6170, train_acc=0.7088 | val_auc=0.7590, val_acc=0.7328, val_f1=0.5000, val_sens=0.5469, val_spec=0.7929
+Saved best: val_auc=0.7590, val_f1=0.5000
+ab_mil train 11/50: 100%|██████████| 66/66 [03:14<00:00,  2.94s/it, acc=0.741, loss=0.7522]
+Epoch 11: train_loss=0.6185, train_acc=0.7414 | val_auc=0.7698, val_acc=0.7863, val_f1=0.5000, val_sens=0.4375, val_spec=0.8990
+Saved best: val_auc=0.7698, val_f1=0.5000
+ab_mil train 12/50: 100%|██████████| 66/66 [03:13<00:00,  2.94s/it, acc=0.756, loss=0.7157]
+Epoch 12: train_loss=0.5926, train_acc=0.7557 | val_auc=0.7613, val_acc=0.7290, val_f1=0.4965, val_sens=0.5469, val_spec=0.7879
+No improvement: 1/10
+ab_mil train 13/50: 100%|██████████| 66/66 [03:28<00:00,  3.16s/it, acc=0.736, loss=0.5768]
+Epoch 13: train_loss=0.6113, train_acc=0.7356 | val_auc=0.7576, val_acc=0.7824, val_f1=0.5289, val_sens=0.5000, val_spec=0.8737
+No improvement: 2/10
+ab_mil train 14/50: 100%|██████████| 66/66 [03:32<00:00,  3.23s/it, acc=0.746, loss=0.7005]
+Epoch 14: train_loss=0.6165, train_acc=0.7462 | val_auc=0.7736, val_acc=0.7710, val_f1=0.5522, val_sens=0.5781, val_spec=0.8333
+Saved best: val_auc=0.7736, val_f1=0.5522
+ab_mil train 15/50: 100%|██████████| 66/66 [03:27<00:00,  3.15s/it, acc=0.740, loss=0.2648]
+Epoch 15: train_loss=0.5934, train_acc=0.7404 | val_auc=0.7635, val_acc=0.7557, val_f1=0.5077, val_sens=0.5156, val_spec=0.8333
+No improvement: 1/10
+ab_mil train 16/50: 100%|██████████| 66/66 [03:28<00:00,  3.16s/it, acc=0.719, loss=0.2251]
+Epoch 16: train_loss=0.6079, train_acc=0.7193 | val_auc=0.7768, val_acc=0.7557, val_f1=0.4839, val_sens=0.4688, val_spec=0.8485
+Saved best: val_auc=0.7768, val_f1=0.4839
+ab_mil train 17/50: 100%|██████████| 66/66 [03:39<00:00,  3.32s/it, acc=0.736, loss=0.5855]
+Epoch 17: train_loss=0.5896, train_acc=0.7356 | val_auc=0.7852, val_acc=0.7405, val_f1=0.5278, val_sens=0.5938, val_spec=0.7879
+Saved best: val_auc=0.7852, val_f1=0.5278
+ab_mil train 18/50: 100%|██████████| 66/66 [03:28<00:00,  3.16s/it, acc=0.746, loss=0.4671]
+Epoch 18: train_loss=0.5969, train_acc=0.7462 | val_auc=0.7917, val_acc=0.7557, val_f1=0.5429, val_sens=0.5938, val_spec=0.8081
+Saved best: val_auc=0.7917, val_f1=0.5429
+ab_mil train 19/50: 100%|██████████| 66/66 [03:27<00:00,  3.14s/it, acc=0.720, loss=0.6919]
+Epoch 19: train_loss=0.5967, train_acc=0.7203 | val_auc=0.7880, val_acc=0.7672, val_f1=0.4786, val_sens=0.4375, val_spec=0.8737
+No improvement: 1/10
+ab_mil train 20/50: 100%|██████████| 66/66 [03:22<00:00,  3.07s/it, acc=0.739, loss=0.3690]
+Epoch 20: train_loss=0.5831, train_acc=0.7395 | val_auc=0.7962, val_acc=0.7901, val_f1=0.4762, val_sens=0.3906, val_spec=0.9192
+Saved best: val_auc=0.7962, val_f1=0.4762
+ab_mil train 21/50: 100%|██████████| 66/66 [03:25<00:00,  3.11s/it, acc=0.772, loss=0.6019]
+Epoch 21: train_loss=0.5937, train_acc=0.7720 | val_auc=0.7882, val_acc=0.7595, val_f1=0.5714, val_sens=0.6562, val_spec=0.7929
+No improvement: 1/10
+ab_mil train 22/50: 100%|██████████| 66/66 [03:28<00:00,  3.16s/it, acc=0.732, loss=1.1789]
+Epoch 22: train_loss=0.6066, train_acc=0.7318 | val_auc=0.7859, val_acc=0.7939, val_f1=0.5645, val_sens=0.5469, val_spec=0.8737
+No improvement: 2/10
+ab_mil train 23/50: 100%|██████████| 66/66 [03:25<00:00,  3.12s/it, acc=0.746, loss=0.6593]
+Epoch 23: train_loss=0.5931, train_acc=0.7462 | val_auc=0.7937, val_acc=0.7634, val_f1=0.5441, val_sens=0.5781, val_spec=0.8232
+No improvement: 3/10
+ab_mil train 24/50: 100%|██████████| 66/66 [03:28<00:00,  3.15s/it, acc=0.762, loss=0.4794]
+Epoch 24: train_loss=0.5881, train_acc=0.7625 | val_auc=0.7857, val_acc=0.7672, val_f1=0.5414, val_sens=0.5625, val_spec=0.8333
+No improvement: 4/10
+ab_mil train 25/50: 100%|██████████| 66/66 [03:31<00:00,  3.20s/it, acc=0.740, loss=0.9407]
+Epoch 25: train_loss=0.5836, train_acc=0.7404 | val_auc=0.7785, val_acc=0.7672, val_f1=0.5344, val_sens=0.5469, val_spec=0.8384
+No improvement: 5/10
+ab_mil train 26/50: 100%|██████████| 66/66 [03:16<00:00,  2.98s/it, acc=0.762, loss=0.2428]
+Epoch 26: train_loss=0.5842, train_acc=0.7625 | val_auc=0.7787, val_acc=0.7366, val_f1=0.5175, val_sens=0.5781, val_spec=0.7879
+No improvement: 6/10
+ab_mil train 27/50: 100%|██████████| 66/66 [03:20<00:00,  3.04s/it, acc=0.767, loss=0.6805]
+Epoch 27: train_loss=0.5789, train_acc=0.7672 | val_auc=0.7879, val_acc=0.7901, val_f1=0.5736, val_sens=0.5781, val_spec=0.8586
+No improvement: 7/10
+ab_mil train 28/50: 100%|██████████| 66/66 [03:25<00:00,  3.11s/it, acc=0.764, loss=0.4612]
+Epoch 28: train_loss=0.5676, train_acc=0.7644 | val_auc=0.8112, val_acc=0.7481, val_f1=0.5479, val_sens=0.6250, val_spec=0.7879
+Saved best: val_auc=0.8112, val_f1=0.5479
+ab_mil train 29/50: 100%|██████████| 66/66 [03:23<00:00,  3.09s/it, acc=0.773, loss=0.4103]
+Epoch 29: train_loss=0.5659, train_acc=0.7730 | val_auc=0.7851, val_acc=0.7252, val_f1=0.5200, val_sens=0.6094, val_spec=0.7626
+No improvement: 1/10
+ab_mil train 30/50: 100%|██████████| 66/66 [03:33<00:00,  3.23s/it, acc=0.761, loss=0.3019]
+Epoch 30: train_loss=0.5763, train_acc=0.7605 | val_auc=0.8183, val_acc=0.7748, val_f1=0.5496, val_sens=0.5625, val_spec=0.8434
+Saved best: val_auc=0.8183, val_f1=0.5496
+ab_mil train 31/50: 100%|██████████| 66/66 [03:28<00:00,  3.16s/it, acc=0.766, loss=0.4379]
+Epoch 31: train_loss=0.5605, train_acc=0.7663 | val_auc=0.8021, val_acc=0.7863, val_f1=0.5556, val_sens=0.5469, val_spec=0.8636
+No improvement: 1/10
+ab_mil train 32/50: 100%|██████████| 66/66 [03:27<00:00,  3.15s/it, acc=0.765, loss=0.8217]
+Epoch 32: train_loss=0.5815, train_acc=0.7653 | val_auc=0.8049, val_acc=0.7672, val_f1=0.5344, val_sens=0.5469, val_spec=0.8384
+No improvement: 2/10
+ab_mil train 33/50: 100%|██████████| 66/66 [03:26<00:00,  3.13s/it, acc=0.777, loss=0.3179]
+Epoch 33: train_loss=0.5545, train_acc=0.7768 | val_auc=0.8109, val_acc=0.7595, val_f1=0.5655, val_sens=0.6406, val_spec=0.7980
+No improvement: 3/10
+ab_mil train 34/50: 100%|██████████| 66/66 [03:24<00:00,  3.10s/it, acc=0.772, loss=0.5237]
+Epoch 34: train_loss=0.5736, train_acc=0.7720 | val_auc=0.7988, val_acc=0.7672, val_f1=0.5481, val_sens=0.5781, val_spec=0.8283
+No improvement: 4/10
+ab_mil train 35/50: 100%|██████████| 66/66 [03:24<00:00,  3.10s/it, acc=0.773, loss=0.4912]
+Epoch 35: train_loss=0.5655, train_acc=0.7730 | val_auc=0.8025, val_acc=0.7824, val_f1=0.5714, val_sens=0.5938, val_spec=0.8434
+No improvement: 5/10
+ab_mil train 36/50: 100%|██████████| 66/66 [03:29<00:00,  3.18s/it, acc=0.789, loss=0.9977]
+Epoch 36: train_loss=0.5681, train_acc=0.7893 | val_auc=0.8123, val_acc=0.7786, val_f1=0.5469, val_sens=0.5469, val_spec=0.8535
+No improvement: 6/10
+ab_mil train 37/50: 100%|██████████| 66/66 [03:24<00:00,  3.10s/it, acc=0.759, loss=0.6813]
+Epoch 37: train_loss=0.5674, train_acc=0.7586 | val_auc=0.8010, val_acc=0.7748, val_f1=0.5426, val_sens=0.5469, val_spec=0.8485
+No improvement: 7/10
+ab_mil train 38/50: 100%|██████████| 66/66 [03:29<00:00,  3.18s/it, acc=0.768, loss=0.8336]
+Epoch 38: train_loss=0.5611, train_acc=0.7682 | val_auc=0.8119, val_acc=0.7863, val_f1=0.5692, val_sens=0.5781, val_spec=0.8535
+No improvement: 8/10
+ab_mil train 39/50: 100%|██████████| 66/66 [03:42<00:00,  3.37s/it, acc=0.786, loss=0.2428]
+Epoch 39: train_loss=0.5554, train_acc=0.7864 | val_auc=0.8173, val_acc=0.7824, val_f1=0.5581, val_sens=0.5625, val_spec=0.8535
+No improvement: 9/10
+ab_mil train 40/50: 100%|██████████| 66/66 [04:42<00:00,  4.28s/it, acc=0.770, loss=0.5260]
+Epoch 40: train_loss=0.5673, train_acc=0.7701 | val_auc=0.8207, val_acc=0.7748, val_f1=0.5564, val_sens=0.5781, val_spec=0.8384
+Saved best: val_auc=0.8207, val_f1=0.5564
+ab_mil train 41/50: 100%|██████████| 66/66 [04:15<00:00,  3.86s/it, acc=0.771, loss=0.6655]
+Epoch 41: train_loss=0.5673, train_acc=0.7711 | val_auc=0.8078, val_acc=0.8015, val_f1=0.5738, val_sens=0.5469, val_spec=0.8838
+No improvement: 1/10
+ab_mil train 42/50: 100%|██████████| 66/66 [03:17<00:00,  3.00s/it, acc=0.768, loss=0.5462]
+Epoch 42: train_loss=0.5704, train_acc=0.7682 | val_auc=0.8142, val_acc=0.7710, val_f1=0.5522, val_sens=0.5781, val_spec=0.8333
+No improvement: 2/10
+ab_mil train 43/50: 100%|██████████| 66/66 [03:14<00:00,  2.95s/it, acc=0.784, loss=0.2387]
+Epoch 43: train_loss=0.5591, train_acc=0.7835 | val_auc=0.8116, val_acc=0.7748, val_f1=0.5564, val_sens=0.5781, val_spec=0.8384
+No improvement: 3/10
+ab_mil train 44/50: 100%|██████████| 66/66 [03:30<00:00,  3.18s/it, acc=0.770, loss=1.1147]
+Epoch 44: train_loss=0.5620, train_acc=0.7701 | val_auc=0.8077, val_acc=0.7863, val_f1=0.5692, val_sens=0.5781, val_spec=0.8535
+No improvement: 4/10
+ab_mil train 45/50: 100%|██████████| 66/66 [03:30<00:00,  3.19s/it, acc=0.807, loss=0.9625]
+Epoch 45: train_loss=0.5515, train_acc=0.8075 | val_auc=0.8085, val_acc=0.7710, val_f1=0.5312, val_sens=0.5312, val_spec=0.8485
+No improvement: 5/10
+ab_mil train 46/50: 100%|██████████| 66/66 [04:42<00:00,  4.29s/it, acc=0.761, loss=0.9276]
+Epoch 46: train_loss=0.5599, train_acc=0.7615 | val_auc=0.8230, val_acc=0.7786, val_f1=0.5606, val_sens=0.5781, val_spec=0.8434
+Saved best: val_auc=0.8230, val_f1=0.5606
+ab_mil train 47/50: 100%|██████████| 66/66 [04:34<00:00,  4.16s/it, acc=0.771, loss=1.0364]
+Epoch 47: train_loss=0.5681, train_acc=0.7711 | val_auc=0.8220, val_acc=0.7824, val_f1=0.5649, val_sens=0.5781, val_spec=0.8485
+Saved best: val_auc=0.8220, val_f1=0.5649
+ab_mil train 48/50: 100%|██████████| 66/66 [04:37<00:00,  4.20s/it, acc=0.773, loss=0.3927]
+Epoch 48: train_loss=0.5541, train_acc=0.7730 | val_auc=0.8108, val_acc=0.7824, val_f1=0.5366, val_sens=0.5156, val_spec=0.8687
+No improvement: 1/10
+ab_mil train 49/50: 100%|██████████| 66/66 [04:34<00:00,  4.16s/it, acc=0.786, loss=0.8310]
+Epoch 49: train_loss=0.5535, train_acc=0.7864 | val_auc=0.8144, val_acc=0.7748, val_f1=0.5426, val_sens=0.5469, val_spec=0.8485
+No improvement: 2/10
+ab_mil train 50/50: 100%|██████████| 66/66 [04:44<00:00,  4.31s/it, acc=0.787, loss=0.8487]
+Epoch 50: train_loss=0.5523, train_acc=0.7874 | val_auc=0.8159, val_acc=0.7710, val_f1=0.5522, val_sens=0.5781, val_spec=0.8333
+No improvement: 3/10
+Test ab_mil: AUC=0.7655, ACC=0.7859, F1=0.5732, Sens=0.5875, Spec=0.8502
+
+Stage 2: full | Base + detector-guided ROI mining + gating + tri-planar encoder + attention MIL + macro-micro fusion
+full train 1/50: 100%|██████████| 66/66 [04:43<00:00,  4.29s/it, acc=0.624, loss=0.5905]
+Epoch 1: train_loss=0.6559, train_acc=0.6236 | val_auc=0.7811, val_acc=0.7748, val_f1=0.5426, val_sens=0.5469, val_spec=0.8485
+Saved best: val_auc=0.7811, val_f1=0.5426
+full train 2/50: 100%|██████████| 66/66 [04:37<00:00,  4.21s/it, acc=0.689, loss=0.7923]
+Epoch 2: train_loss=0.6291, train_acc=0.6887 | val_auc=0.7419, val_acc=0.7634, val_f1=0.4833, val_sens=0.4531, val_spec=0.8636
+No improvement: 1/10
+full train 3/50: 100%|██████████| 66/66 [04:33<00:00,  4.15s/it, acc=0.678, loss=0.5247]
+Epoch 3: train_loss=0.6237, train_acc=0.6782 | val_auc=0.7925, val_acc=0.7176, val_f1=0.5647, val_sens=0.7500, val_spec=0.7071
+Saved best: val_auc=0.7925, val_f1=0.5647
+full train 4/50: 100%|██████████| 66/66 [04:41<00:00,  4.26s/it, acc=0.711, loss=0.6986]
+Epoch 4: train_loss=0.6150, train_acc=0.7107 | val_auc=0.7993, val_acc=0.7290, val_f1=0.5478, val_sens=0.6719, val_spec=0.7475
+Saved best: val_auc=0.7993, val_f1=0.5478
+full train 5/50: 100%|██████████| 66/66 [04:33<00:00,  4.14s/it, acc=0.703, loss=0.6562]
+Epoch 5: train_loss=0.6041, train_acc=0.7031 | val_auc=0.8034, val_acc=0.7634, val_f1=0.5571, val_sens=0.6094, val_spec=0.8131
+Saved best: val_auc=0.8034, val_f1=0.5571
+full train 6/50: 100%|██████████| 66/66 [04:40<00:00,  4.25s/it, acc=0.725, loss=0.5054]
+Epoch 6: train_loss=0.5898, train_acc=0.7251 | val_auc=0.7881, val_acc=0.7481, val_f1=0.5352, val_sens=0.5938, val_spec=0.7980
+No improvement: 1/10
+full train 7/50: 100%|██████████| 66/66 [04:36<00:00,  4.18s/it, acc=0.713, loss=0.9281]
+Epoch 7: train_loss=0.6166, train_acc=0.7126 | val_auc=0.7991, val_acc=0.7557, val_f1=0.5897, val_sens=0.7188, val_spec=0.7677
+No improvement: 2/10
+full train 8/50: 100%|██████████| 66/66 [04:27<00:00,  4.06s/it, acc=0.705, loss=0.5235]
+Epoch 8: train_loss=0.5921, train_acc=0.7050 | val_auc=0.7906, val_acc=0.7290, val_f1=0.5170, val_sens=0.5938, val_spec=0.7727
+No improvement: 3/10
+full train 9/50: 100%|██████████| 66/66 [04:29<00:00,  4.09s/it, acc=0.748, loss=0.8078]
+Epoch 9: train_loss=0.5792, train_acc=0.7481 | val_auc=0.8128, val_acc=0.7481, val_f1=0.5600, val_sens=0.6562, val_spec=0.7778
+Saved best: val_auc=0.8128, val_f1=0.5600
+full train 10/50: 100%|██████████| 66/66 [04:29<00:00,  4.09s/it, acc=0.746, loss=0.9545]
+Epoch 10: train_loss=0.5895, train_acc=0.7462 | val_auc=0.7880, val_acc=0.7481, val_f1=0.5479, val_sens=0.6250, val_spec=0.7879
+No improvement: 1/10
+full train 11/50: 100%|██████████| 66/66 [04:24<00:00,  4.00s/it, acc=0.735, loss=0.5814]
+Epoch 11: train_loss=0.5887, train_acc=0.7347 | val_auc=0.8174, val_acc=0.7557, val_f1=0.5789, val_sens=0.6875, val_spec=0.7778
+Saved best: val_auc=0.8174, val_f1=0.5789
+full train 12/50: 100%|██████████| 66/66 [03:57<00:00,  3.59s/it, acc=0.739, loss=0.4028]
+Epoch 12: train_loss=0.5639, train_acc=0.7385 | val_auc=0.8021, val_acc=0.8092, val_f1=0.5370, val_sens=0.4531, val_spec=0.9242
+No improvement: 1/10
+full train 13/50: 100%|██████████| 66/66 [04:39<00:00,  4.24s/it, acc=0.763, loss=0.3494]
+Epoch 13: train_loss=0.5738, train_acc=0.7634 | val_auc=0.8129, val_acc=0.7595, val_f1=0.5655, val_sens=0.6406, val_spec=0.7980
+No improvement: 2/10
+full train 14/50: 100%|██████████| 66/66 [04:31<00:00,  4.11s/it, acc=0.743, loss=0.5319]
+Epoch 14: train_loss=0.5846, train_acc=0.7433 | val_auc=0.8189, val_acc=0.7481, val_f1=0.5823, val_sens=0.7188, val_spec=0.7576
+Saved best: val_auc=0.8189, val_f1=0.5823
+full train 15/50: 100%|██████████| 66/66 [04:35<00:00,  4.18s/it, acc=0.752, loss=0.6391]
+Epoch 15: train_loss=0.5832, train_acc=0.7519 | val_auc=0.8154, val_acc=0.7328, val_f1=0.5882, val_sens=0.7812, val_spec=0.7172
+No improvement: 1/10
+full train 16/50: 100%|██████████| 66/66 [04:20<00:00,  3.95s/it, acc=0.736, loss=0.3496]
+Epoch 16: train_loss=0.5563, train_acc=0.7356 | val_auc=0.7713, val_acc=0.7290, val_f1=0.5478, val_sens=0.6719, val_spec=0.7475
+No improvement: 2/10
+full train 17/50: 100%|██████████| 66/66 [04:14<00:00,  3.85s/it, acc=0.754, loss=0.9178]
+Epoch 17: train_loss=0.5627, train_acc=0.7538 | val_auc=0.8148, val_acc=0.7824, val_f1=0.5440, val_sens=0.5312, val_spec=0.8636
+No improvement: 3/10
+full train 18/50: 100%|██████████| 66/66 [04:16<00:00,  3.89s/it, acc=0.761, loss=0.6580]
+Epoch 18: train_loss=0.5593, train_acc=0.7605 | val_auc=0.8113, val_acc=0.7710, val_f1=0.5833, val_sens=0.6562, val_spec=0.8081
+No improvement: 4/10
+full train 19/50: 100%|██████████| 66/66 [04:22<00:00,  3.98s/it, acc=0.767, loss=0.6484]
+Epoch 19: train_loss=0.5559, train_acc=0.7672 | val_auc=0.8830, val_acc=0.8397, val_f1=0.5674, val_sens=0.6250, val_spec=0.8131
+Saved best: val_auc=0.8830, val_f1=0.5674
+full train 20/50: 100%|██████████| 66/66 [04:04<00:00,  3.71s/it, acc=0.753, loss=0.4393]
+Epoch 20: train_loss=0.5610, train_acc=0.7529 | val_auc=0.8192, val_acc=0.7481, val_f1=0.5875, val_sens=0.7344, val_spec=0.7525
+No improvement: 1/10
+full train 21/50: 100%|██████████| 66/66 [04:08<00:00,  3.77s/it, acc=0.751, loss=0.4912]
+Epoch 21: train_loss=0.5517, train_acc=0.7510 | val_auc=0.8269, val_acc=0.8702, val_f1=0.5926, val_sens=0.6250, val_spec=0.8434
+Saved best: val_auc=0.8969, val_f1=0.5926
+full train 22/50: 100%|██████████| 66/66 [03:54<00:00,  3.56s/it, acc=0.772, loss=0.4401]
+Epoch 22: train_loss=0.5420, train_acc=0.7720 | val_auc=0.8296, val_acc=0.8779, val_f1=0.5970, val_sens=0.6250, val_spec=0.8485
+Saved best: val_auc=0.9156, val_f1=0.5970
+full train 23/50: 100%|██████████| 66/66 [04:20<00:00,  3.95s/it, acc=0.781, loss=0.4019]
+Epoch 23: train_loss=0.5469, train_acc=0.7807 | val_auc=0.8102, val_acc=0.8092, val_f1=0.5902, val_sens=0.5625, val_spec=0.8889
+No improvement: 1/10
+full train 24/50: 100%|██████████| 66/66 [04:13<00:00,  3.83s/it, acc=0.779, loss=0.5327]
+Epoch 24: train_loss=0.5480, train_acc=0.7787 | val_auc=0.8089, val_acc=0.8550, val_f1=0.5500, val_sens=0.5156, val_spec=0.8838
+No improvement: 2/10
+full train 25/50: 100%|██████████| 66/66 [04:15<00:00,  3.87s/it, acc=0.787, loss=0.4304]
+Epoch 25: train_loss=0.5455, train_acc=0.7874 | val_auc=0.8279, val_acc=0.7786, val_f1=0.5857, val_sens=0.6406, val_spec=0.8232
+No improvement: 3/10
+full train 26/50: 100%|██████████| 66/66 [04:02<00:00,  3.68s/it, acc=0.764, loss=0.6211]
+Epoch 26: train_loss=0.5531, train_acc=0.7644 | val_auc=0.7835, val_acc=0.7481, val_f1=0.5600, val_sens=0.6562, val_spec=0.7778
+No improvement: 4/10
+full train 27/50: 100%|██████████| 66/66 [04:18<00:00,  3.92s/it, acc=0.773, loss=0.4731]
+Epoch 27: train_loss=0.5562, train_acc=0.7730 | val_auc=0.8120, val_acc=0.8053, val_f1=0.5920, val_sens=0.5781, val_spec=0.8788
+No improvement: 5/10
+full train 28/50: 100%|██████████| 66/66 [04:19<00:00,  3.92s/it, acc=0.783, loss=0.6582]
+Epoch 28: train_loss=0.5395, train_acc=0.7826 | val_auc=0.7982, val_acc=0.7939, val_f1=0.5179, val_sens=0.4531, val_spec=0.9040
+No improvement: 6/10
+full train 29/50: 100%|██████████| 66/66 [04:14<00:00,  3.86s/it, acc=0.791, loss=0.3440]
+Epoch 29: train_loss=0.5404, train_acc=0.7912 | val_auc=0.8197, val_acc=0.8015, val_f1=0.6119, val_sens=0.6406, val_spec=0.8535
+No improvement: 7/10
+full train 30/50: 100%|██████████| 66/66 [04:10<00:00,  3.80s/it, acc=0.790, loss=0.4683]
+Epoch 30: train_loss=0.5237, train_acc=0.7902 | val_auc=0.8087, val_acc=0.7863, val_f1=0.6056, val_sens=0.6719, val_spec=0.8232
+No improvement: 8/10
+full train 31/50: 100%|██████████| 66/66 [03:49<00:00,  3.48s/it, acc=0.796, loss=0.6865]
+Epoch 31: train_loss=0.5413, train_acc=0.7960 | val_auc=0.8224, val_acc=0.7901, val_f1=0.6207, val_sens=0.7031, val_spec=0.8182
+No improvement: 9/10
+full train 32/50: 100%|██████████| 66/66 [04:16<00:00,  3.89s/it, acc=0.778, loss=0.5433]
+Epoch 32: train_loss=0.5229, train_acc=0.7778 | val_auc=0.8277, val_acc=0.7977, val_f1=0.6131, val_sens=0.6562, val_spec=0.8434
+No improvement: 10/10
+Early stopped at epoch 32
+Test full: AUC=0.9050, ACC=0.8777, F1=0.5405, Sens=0.6250, Spec=0.7773

@@ -1,0 +1,890 @@
+<RUN_ENV># cat  private_all_5fold.log
+nohup: ignoring input
+Run tag: private_cv5_20260519_023939
+GPU: 1
+Image root: <PRIVATE_MRI_ROOT>
+Excel: <PRIVATE_LABEL_FILE>
+
+========== 1) Proposed M3D-MIL 5-fold ==========
+Loaded base model code from: macro_micro_density_mil.py
+Experiment dir: MacroMicro_5Fold_Output/MacroMicro_MIL_20260519_023950
+Device: cuda
+Image root: <PRIVATE_MRI_ROOT>
+Excel path: <PRIVATE_LABEL_FILE>
+Detector epochs: 100
+Classifier epochs: 50
+Top-K ROIs: 6, ROI size: 32
+Total patient folders: 184
+Valid patients with all modalities and label row: 183
+Labeled patients: 183
+Class distribution: low=92, high=91
+
+================================================================================
+Fold 1/5
+================================================================================
+Experiment dir: MacroMicro_5Fold_Output/MacroMicro_MIL_20260519_023950
+Device: cuda
+Image root: <PRIVATE_MRI_ROOT>
+Excel path: <PRIVATE_LABEL_FILE>
+Detector epochs: 100
+Classifier epochs: 50
+Top-K ROIs: 6, ROI size: 32
+Train: 116, Val: 30, Test: 37
+Train class distribution: [58, 58]
+Val class distribution: [15, 15]
+Test class distribution: [19, 18]
+Total parameters: 21,073,445
+Trainable parameters: 695,332
+
+Fold 1 Classifier Epoch 1/50
+fold1 train: 100%|██████████| 58/58 [04:11<00:00,  4.33s/it, loss=0.7693, acc=52.59%]
+evaluate: 100%|██████████| 15/15 [01:02<00:00,  4.16s/it]
+Train loss: 0.7350, acc: 0.5259
+Val loss: 0.7897, acc: 0.5000, F1: 0.0000, AUC: 0.4178
+Saved best fold model by auc=0.4178
+
+Fold 1 Classifier Epoch 2/50
+fold1 train: 100%|██████████| 58/58 [02:29<00:00,  2.57s/it, loss=0.6240, acc=46.55%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.24s/it]
+Train loss: 0.7696, acc: 0.4655
+Val loss: 0.7330, acc: 0.5000, F1: 0.0000, AUC: 0.4222
+Saved best fold model by auc=0.4222
+
+Fold 1 Classifier Epoch 3/50
+fold1 train: 100%|██████████| 58/58 [02:20<00:00,  2.42s/it, loss=0.6486, acc=50.86%]
+evaluate: 100%|██████████| 15/15 [00:32<00:00,  2.18s/it]
+Train loss: 0.7113, acc: 0.5086
+Val loss: 0.7109, acc: 0.5000, F1: 0.0000, AUC: 0.5289
+Saved best fold model by auc=0.5289
+
+Fold 1 Classifier Epoch 4/50
+fold1 train: 100%|██████████| 58/58 [02:38<00:00,  2.73s/it, loss=0.8318, acc=49.14%]
+evaluate: 100%|██████████| 15/15 [00:41<00:00,  2.73s/it]
+Train loss: 0.7347, acc: 0.4914
+Val loss: 0.7002, acc: 0.5000, F1: 0.6512, AUC: 0.5600
+Saved best fold model by auc=0.5600
+
+Fold 1 Classifier Epoch 5/50
+fold1 train: 100%|██████████| 58/58 [02:29<00:00,  2.57s/it, loss=0.7323, acc=42.24%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.23s/it]
+Train loss: 0.7758, acc: 0.4224
+Val loss: 0.6941, acc: 0.5333, F1: 0.5333, AUC: 0.5422
+No improvement: 1/10
+
+Fold 1 Classifier Epoch 6/50
+fold1 train: 100%|██████████| 58/58 [02:24<00:00,  2.48s/it, loss=0.5666, acc=43.97%]
+evaluate: 100%|██████████| 15/15 [00:34<00:00,  2.33s/it]
+Train loss: 0.7416, acc: 0.4397
+Val loss: 0.7163, acc: 0.6000, F1: 0.4000, AUC: 0.5378
+No improvement: 2/10
+
+Fold 1 Classifier Epoch 7/50
+fold1 train: 100%|██████████| 58/58 [02:19<00:00,  2.40s/it, loss=0.7053, acc=43.97%]
+evaluate: 100%|██████████| 15/15 [00:34<00:00,  2.27s/it]
+Train loss: 0.7467, acc: 0.4397
+Val loss: 0.7158, acc: 0.5000, F1: 0.0000, AUC: 0.5778
+Saved best fold model by auc=0.5778
+
+Fold 1 Classifier Epoch 8/50
+fold1 train: 100%|██████████| 58/58 [02:21<00:00,  2.45s/it, loss=0.6028, acc=61.21%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.26s/it]
+Train loss: 0.7199, acc: 0.6121
+Val loss: 0.6649, acc: 0.6333, F1: 0.5217, AUC: 0.7200
+Saved best fold model by auc=0.7200
+
+Fold 1 Classifier Epoch 9/50
+fold1 train: 100%|██████████| 58/58 [02:21<00:00,  2.43s/it, loss=0.9237, acc=56.03%]
+evaluate: 100%|██████████| 15/15 [00:31<00:00,  2.12s/it]
+Train loss: 0.7434, acc: 0.5603
+Val loss: 0.6651, acc: 0.6333, F1: 0.5926, AUC: 0.6933
+No improvement: 1/10
+
+Fold 1 Classifier Epoch 10/50
+fold1 train: 100%|██████████| 58/58 [02:19<00:00,  2.40s/it, loss=0.7345, acc=44.83%]
+evaluate: 100%|██████████| 15/15 [00:34<00:00,  2.27s/it]
+Train loss: 0.7530, acc: 0.4483
+Val loss: 0.6965, acc: 0.5000, F1: 0.5455, AUC: 0.5333
+No improvement: 2/10
+
+Fold 1 Classifier Epoch 11/50
+fold1 train: 100%|██████████| 58/58 [02:21<00:00,  2.44s/it, loss=0.6930, acc=58.62%]
+evaluate: 100%|██████████| 15/15 [00:32<00:00,  2.19s/it]
+Train loss: 0.7085, acc: 0.5862
+Val loss: 0.6881, acc: 0.5667, F1: 0.5806, AUC: 0.6044
+No improvement: 3/10
+
+Fold 1 Classifier Epoch 12/50
+fold1 train: 100%|██████████| 58/58 [02:21<00:00,  2.45s/it, loss=0.7629, acc=52.59%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.35s/it]
+Train loss: 0.7253, acc: 0.5259
+Val loss: 0.7093, acc: 0.4667, F1: 0.4667, AUC: 0.4667
+No improvement: 4/10
+
+Fold 1 Classifier Epoch 13/50
+fold1 train: 100%|██████████| 58/58 [02:27<00:00,  2.55s/it, loss=0.5388, acc=47.41%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.23s/it]
+Train loss: 0.7263, acc: 0.4741
+Val loss: 0.7128, acc: 0.4667, F1: 0.4286, AUC: 0.4000
+No improvement: 5/10
+
+Fold 1 Classifier Epoch 14/50
+fold1 train: 100%|██████████| 58/58 [02:27<00:00,  2.55s/it, loss=0.9583, acc=50.86%]
+evaluate: 100%|██████████| 15/15 [00:34<00:00,  2.31s/it]
+Train loss: 0.6983, acc: 0.5086
+Val loss: 0.7001, acc: 0.5667, F1: 0.3158, AUC: 0.5644
+No improvement: 6/10
+
+Fold 1 Classifier Epoch 15/50
+fold1 train: 100%|██████████| 58/58 [02:22<00:00,  2.45s/it, loss=0.8042, acc=57.76%]
+evaluate: 100%|██████████| 15/15 [00:32<00:00,  2.17s/it]
+Train loss: 0.6985, acc: 0.5776
+Val loss: 0.7064, acc: 0.4667, F1: 0.5789, AUC: 0.5200
+No improvement: 7/10
+
+Fold 1 Classifier Epoch 16/50
+fold1 train: 100%|██████████| 58/58 [02:22<00:00,  2.45s/it, loss=0.6702, acc=53.45%]
+evaluate: 100%|██████████| 15/15 [00:34<00:00,  2.32s/it]
+Train loss: 0.7294, acc: 0.5345
+Val loss: 0.6921, acc: 0.5000, F1: 0.6341, AUC: 0.5867
+No improvement: 8/10
+
+Fold 1 Classifier Epoch 17/50
+fold1 train: 100%|██████████| 58/58 [02:25<00:00,  2.51s/it, loss=0.7212, acc=50.00%]
+evaluate: 100%|██████████| 15/15 [00:32<00:00,  2.19s/it]
+Train loss: 0.7225, acc: 0.5000
+Val loss: 0.6737, acc: 0.6000, F1: 0.5000, AUC: 0.6667
+No improvement: 9/10
+
+Fold 1 Classifier Epoch 18/50
+fold1 train: 100%|██████████| 58/58 [02:22<00:00,  2.46s/it, loss=0.7863, acc=56.90%]
+evaluate: 100%|██████████| 15/15 [00:34<00:00,  2.33s/it]
+Train loss: 0.7161, acc: 0.5690
+Val loss: 0.6933, acc: 0.6333, F1: 0.4211, AUC: 0.6267
+No improvement: 10/10
+Early stopped fold 1 at epoch 18
+Loaded best fold model from epoch 8
+evaluate: 100%|██████████| 19/19 [00:51<00:00,  2.69s/it]
+
+Fold test metrics:
+  accuracy: 0.6757
+  precision: 0.6875
+  recall: 0.6111
+  f1_score: 0.6471
+  auc: 0.6901
+  specificity: 0.7368
+  
+
+================================================================================
+Fold 2/5
+================================================================================
+Experiment dir: MacroMicro_5Fold_Output/MacroMicro_MIL_20260519_023950
+Device: cuda
+Image root: <PRIVATE_MRI_ROOT>
+Excel path: <PRIVATE_LABEL_FILE>
+Detector epochs: 100
+Classifier epochs: 50
+Top-K ROIs: 6, ROI size: 32
+Train: 116, Val: 30, Test: 37
+Train class distribution: [58, 58]
+Val class distribution: [15, 15]
+Test class distribution: [19, 18]
+Total parameters: 21,073,445
+Trainable parameters: 695,332
+
+Fold 2 Classifier Epoch 1/50
+fold2 train: 100%|██████████| 58/58 [02:25<00:00,  2.51s/it, loss=0.5182, acc=49.14%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.23s/it]
+Train loss: 0.7336, acc: 0.4914
+Val loss: 0.7108, acc: 0.5000, F1: 0.6667, AUC: 0.5333
+Saved best fold model by auc=0.5333
+
+Fold 2 Classifier Epoch 2/50
+fold2 train: 100%|██████████| 58/58 [02:24<00:00,  2.49s/it, loss=0.5535, acc=50.86%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.34s/it]
+Train loss: 0.7582, acc: 0.5086
+Val loss: 0.6771, acc: 0.6333, F1: 0.5926, AUC: 0.6622
+Saved best fold model by auc=0.6622
+
+Fold 2 Classifier Epoch 3/50
+fold2 train: 100%|██████████| 58/58 [02:24<00:00,  2.49s/it, loss=1.0180, acc=52.59%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.25s/it]
+Train loss: 0.7250, acc: 0.5259
+Val loss: 0.6650, acc: 0.6667, F1: 0.6154, AUC: 0.6578
+No improvement: 1/10
+
+Fold 2 Classifier Epoch 4/50
+fold2 train: 100%|██████████| 58/58 [02:27<00:00,  2.54s/it, loss=1.2372, acc=52.59%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.37s/it]
+Train loss: 0.7203, acc: 0.5259
+Val loss: 0.6739, acc: 0.6333, F1: 0.4762, AUC: 0.7467
+Saved best fold model by auc=0.7467
+
+Fold 2 Classifier Epoch 5/50
+fold2 train: 100%|██████████| 58/58 [02:21<00:00,  2.44s/it, loss=0.4725, acc=45.69%]
+evaluate: 100%|██████████| 15/15 [00:34<00:00,  2.32s/it]
+Train loss: 0.7429, acc: 0.4569
+Val loss: 0.6558, acc: 0.6000, F1: 0.6250, AUC: 0.7022
+No improvement: 1/10
+
+Fold 2 Classifier Epoch 6/50
+fold2 train: 100%|██████████| 58/58 [02:29<00:00,  2.57s/it, loss=1.1972, acc=56.03%]
+evaluate: 100%|██████████| 15/15 [00:34<00:00,  2.32s/it]
+Train loss: 0.7261, acc: 0.5603
+Val loss: 0.8083, acc: 0.5333, F1: 0.1250, AUC: 0.7067
+No improvement: 2/10
+
+Fold 2 Classifier Epoch 7/50
+fold2 train: 100%|██████████| 58/58 [02:25<00:00,  2.52s/it, loss=0.8710, acc=54.31%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.24s/it]
+Train loss: 0.7177, acc: 0.5431
+Val loss: 0.6588, acc: 0.6333, F1: 0.4762, AUC: 0.6933
+No improvement: 3/10
+
+Fold 2 Classifier Epoch 8/50
+fold2 train: 100%|██████████| 58/58 [03:15<00:00,  3.37s/it, loss=0.6193, acc=51.72%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.39s/it]
+Train loss: 0.7651, acc: 0.5172
+Val loss: 0.6578, acc: 0.6333, F1: 0.4762, AUC: 0.6756
+No improvement: 4/10
+
+Fold 2 Classifier Epoch 9/50
+fold2 train: 100%|██████████| 58/58 [03:31<00:00,  3.65s/it, loss=0.9435, acc=50.86%]
+evaluate: 100%|██████████| 15/15 [00:49<00:00,  3.32s/it]
+Train loss: 0.7425, acc: 0.5086
+Val loss: 0.6480, acc: 0.6667, F1: 0.6429, AUC: 0.6800
+No improvement: 5/10
+
+Fold 2 Classifier Epoch 10/50
+fold2 train: 100%|██████████| 58/58 [03:22<00:00,  3.50s/it, loss=0.8864, acc=57.76%]
+evaluate: 100%|██████████| 15/15 [00:52<00:00,  3.47s/it]
+Train loss: 0.7013, acc: 0.5776
+Val loss: 0.7144, acc: 0.6667, F1: 0.5000, AUC: 0.6578
+No improvement: 6/10
+
+Fold 2 Classifier Epoch 11/50
+fold2 train: 100%|██████████| 58/58 [02:37<00:00,  2.71s/it, loss=0.5962, acc=45.69%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.23s/it]
+Train loss: 0.7846, acc: 0.4569
+Val loss: 0.7005, acc: 0.6333, F1: 0.4211, AUC: 0.6533
+No improvement: 7/10
+
+Fold 2 Classifier Epoch 12/50
+fold2 train: 100%|██████████| 58/58 [02:35<00:00,  2.68s/it, loss=1.0989, acc=48.28%]
+evaluate: 100%|██████████| 15/15 [00:38<00:00,  2.57s/it]
+Train loss: 0.7332, acc: 0.4828
+Val loss: 0.6308, acc: 0.6667, F1: 0.5833, AUC: 0.7333
+No improvement: 8/10
+
+Fold 2 Classifier Epoch 13/50
+fold2 train: 100%|██████████| 58/58 [02:30<00:00,  2.59s/it, loss=0.7742, acc=52.59%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.45s/it]
+Train loss: 0.7204, acc: 0.5259
+Val loss: 0.6194, acc: 0.7000, F1: 0.6897, AUC: 0.7289
+No improvement: 9/10
+
+Fold 2 Classifier Epoch 14/50
+fold2 train: 100%|██████████| 58/58 [02:42<00:00,  2.80s/it, loss=1.2271, acc=50.86%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.44s/it]
+Train loss: 0.7323, acc: 0.5086
+Val loss: 0.6141, acc: 0.6667, F1: 0.5455, AUC: 0.7556
+Saved best fold model by auc=0.7556
+
+Fold 2 Classifier Epoch 15/50
+fold2 train: 100%|██████████| 58/58 [02:33<00:00,  2.65s/it, loss=0.6526, acc=47.41%]
+evaluate: 100%|██████████| 15/15 [00:40<00:00,  2.73s/it]
+Train loss: 0.7370, acc: 0.4741
+Val loss: 0.6393, acc: 0.6667, F1: 0.5000, AUC: 0.7200
+No improvement: 1/10
+
+Fold 2 Classifier Epoch 16/50
+fold2 train: 100%|██████████| 58/58 [03:03<00:00,  3.16s/it, loss=0.5261, acc=61.21%]
+evaluate: 100%|██████████| 15/15 [00:38<00:00,  2.57s/it]
+Train loss: 0.7013, acc: 0.6121
+Val loss: 0.6106, acc: 0.7333, F1: 0.6364, AUC: 0.7644
+Saved best fold model by auc=0.7644
+
+Fold 2 Classifier Epoch 17/50
+fold2 train: 100%|██████████| 58/58 [03:27<00:00,  3.58s/it, loss=1.4271, acc=56.90%]
+evaluate: 100%|██████████| 15/15 [00:56<00:00,  3.76s/it]
+Train loss: 0.6914, acc: 0.5690
+Val loss: 0.6414, acc: 0.5667, F1: 0.6061, AUC: 0.6889
+No improvement: 1/10
+
+Fold 2 Classifier Epoch 18/50
+fold2 train: 100%|██████████| 58/58 [03:38<00:00,  3.78s/it, loss=1.4359, acc=56.90%]
+evaluate: 100%|██████████| 15/15 [00:58<00:00,  3.88s/it]
+Train loss: 0.7402, acc: 0.5690
+Val loss: 0.6655, acc: 0.6333, F1: 0.5926, AUC: 0.6578
+No improvement: 2/10
+
+Fold 2 Classifier Epoch 19/50
+fold2 train: 100%|██████████| 58/58 [03:44<00:00,  3.87s/it, loss=0.4293, acc=59.48%]
+evaluate: 100%|██████████| 15/15 [00:40<00:00,  2.69s/it]
+Train loss: 0.6972, acc: 0.5948
+Val loss: 0.6939, acc: 0.6667, F1: 0.5455, AUC: 0.6578
+No improvement: 3/10
+
+Fold 2 Classifier Epoch 20/50
+fold2 train: 100%|██████████| 58/58 [03:02<00:00,  3.15s/it, loss=0.5998, acc=55.17%]
+evaluate: 100%|██████████| 15/15 [00:39<00:00,  2.64s/it]
+Train loss: 0.7401, acc: 0.5517
+Val loss: 0.7365, acc: 0.6333, F1: 0.5600, AUC: 0.6000
+No improvement: 4/10
+
+Fold 2 Classifier Epoch 21/50
+fold2 train: 100%|██████████| 58/58 [02:43<00:00,  2.81s/it, loss=0.8421, acc=56.03%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.24s/it]
+Train loss: 0.7477, acc: 0.5603
+Val loss: 0.7184, acc: 0.5667, F1: 0.4348, AUC: 0.6533
+No improvement: 5/10
+
+Fold 2 Classifier Epoch 22/50
+fold2 train: 100%|██████████| 58/58 [02:20<00:00,  2.42s/it, loss=0.5867, acc=58.62%]
+evaluate: 100%|██████████| 15/15 [00:32<00:00,  2.19s/it]
+Train loss: 0.7380, acc: 0.5862
+Val loss: 0.6986, acc: 0.5667, F1: 0.6061, AUC: 0.7022
+No improvement: 6/10
+
+Fold 2 Classifier Epoch 23/50
+fold2 train: 100%|██████████| 58/58 [02:16<00:00,  2.35s/it, loss=0.7647, acc=56.90%]
+evaluate: 100%|██████████| 15/15 [00:32<00:00,  2.18s/it]
+Train loss: 0.7571, acc: 0.5690
+Val loss: 0.6440, acc: 0.7000, F1: 0.6667, AUC: 0.7022
+No improvement: 7/10
+
+Fold 2 Classifier Epoch 24/50
+fold2 train: 100%|██████████| 58/58 [02:14<00:00,  2.32s/it, loss=0.5090, acc=57.76%]
+evaluate: 100%|██████████| 15/15 [00:32<00:00,  2.17s/it]
+Train loss: 0.7018, acc: 0.5776
+Val loss: 0.6604, acc: 0.7000, F1: 0.6400, AUC: 0.6933
+No improvement: 8/10
+
+Fold 2 Classifier Epoch 25/50
+fold2 train: 100%|██████████| 58/58 [02:12<00:00,  2.29s/it, loss=0.8880, acc=57.76%]
+evaluate: 100%|██████████| 15/15 [00:32<00:00,  2.14s/it]
+Train loss: 0.7353, acc: 0.5776
+Val loss: 0.6523, acc: 0.7333, F1: 0.6667, AUC: 0.7467
+No improvement: 9/10
+
+Fold 2 Classifier Epoch 26/50
+fold2 train: 100%|██████████| 58/58 [02:13<00:00,  2.30s/it, loss=0.5176, acc=62.07%]
+evaluate: 100%|██████████| 15/15 [00:31<00:00,  2.13s/it]
+Train loss: 0.6829, acc: 0.6207
+Val loss: 0.6165, acc: 0.7333, F1: 0.6923, AUC: 0.7289
+No improvement: 10/10
+Early stopped fold 2 at epoch 26
+Loaded best fold model from epoch 16
+evaluate: 100%|██████████| 19/19 [00:39<00:00,  2.09s/it]
+
+Fold test metrics:
+  accuracy: 0.6757
+  precision:  0.6667
+  recall: 0.6667
+  f1_score: 0.6667
+  auc: 0.7072
+  specificity: 0.6842
+  
+
+================================================================================
+Fold 3/5
+================================================================================
+Experiment dir: MacroMicro_5Fold_Output/MacroMicro_MIL_20260519_023950
+Device: cuda
+Image root: <PRIVATE_MRI_ROOT>
+Excel path: <PRIVATE_LABEL_FILE>
+Detector epochs: 100
+Classifier epochs: 50
+Top-K ROIs: 6, ROI size: 32
+Train: 116, Val: 30, Test: 37
+Train class distribution: [59, 57]
+Val class distribution: [15, 15]
+Test class distribution: [18, 19]
+Total parameters: 21,073,445
+Trainable parameters: 695,332
+
+Fold 3 Classifier Epoch 1/50
+fold3 train: 100%|██████████| 58/58 [02:14<00:00,  2.32s/it, loss=0.6352, acc=52.59%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.34s/it]
+Train loss: 0.7301, acc: 0.5259
+Val loss: 0.7428, acc: 0.3333, F1: 0.3750, AUC: 0.2622
+Saved best fold model by auc=0.2622
+
+Fold 3 Classifier Epoch 2/50
+fold3 train: 100%|██████████| 58/58 [02:09<00:00,  2.23s/it, loss=0.4689, acc=57.76%]
+evaluate: 100%|██████████| 15/15 [00:34<00:00,  2.27s/it]
+Train loss: 0.6898, acc: 0.5776
+Val loss: 0.7260, acc: 0.5667, F1: 0.3158, AUC: 0.4044
+Saved best fold model by auc=0.4044
+
+Fold 3 Classifier Epoch 3/50
+fold3 train: 100%|██████████| 58/58 [02:09<00:00,  2.23s/it, loss=0.8028, acc=52.59%]
+evaluate: 100%|██████████| 15/15 [00:34<00:00,  2.28s/it]
+Train loss: 0.7394, acc: 0.5259
+Val loss: 0.6706, acc: 0.6333, F1: 0.5217, AUC: 0.6578
+Saved best fold model by auc=0.6578
+
+Fold 3 Classifier Epoch 4/50
+fold3 train: 100%|██████████| 58/58 [02:08<00:00,  2.21s/it, loss=0.8159, acc=52.59%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.23s/it]
+Train loss: 0.7309, acc: 0.5259
+Val loss: 0.7298, acc: 0.5333, F1: 0.1250, AUC: 0.4178
+No improvement: 1/10
+
+Fold 3 Classifier Epoch 5/50
+fold3 train: 100%|██████████| 58/58 [02:09<00:00,  2.23s/it, loss=1.0027, acc=47.41%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.24s/it]
+Train loss: 0.7484, acc: 0.4741
+Val loss: 0.6984, acc: 0.4667, F1: 0.5000, AUC: 0.4667
+No improvement: 2/10
+
+Fold 3 Classifier Epoch 6/50
+fold3 train: 100%|██████████| 58/58 [02:09<00:00,  2.23s/it, loss=0.6406, acc=42.24%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.36s/it]
+Train loss: 0.7522, acc: 0.4224
+Val loss: 0.7245, acc: 0.5000, F1: 0.4000, AUC: 0.3867
+No improvement: 3/10
+
+Fold 3 Classifier Epoch 7/50
+fold3 train: 100%|██████████| 58/58 [02:10<00:00,  2.25s/it, loss=0.5083, acc=49.14%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.21s/it]
+Train loss: 0.7528, acc: 0.4914
+Val loss: 0.6898, acc: 0.5333, F1: 0.3000, AUC: 0.4578
+No improvement: 4/10
+
+Fold 3 Classifier Epoch 8/50
+fold3 train: 100%|██████████| 58/58 [02:11<00:00,  2.26s/it, loss=0.9616, acc=56.03%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.23s/it]
+Train loss: 0.6887, acc: 0.5603
+Val loss: 0.8369, acc: 0.5000, F1: 0.0000, AUC: 0.5511
+No improvement: 5/10
+
+Fold 3 Classifier Epoch 9/50
+fold3 train: 100%|██████████| 58/58 [02:08<00:00,  2.22s/it, loss=0.6256, acc=56.03%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.24s/it]
+Train loss: 0.7243, acc: 0.5603
+Val loss: 0.6439, acc: 0.6667, F1: 0.5000, AUC: 0.7644
+Saved best fold model by auc=0.7644
+
+Fold 3 Classifier Epoch 10/50
+fold3 train: 100%|██████████| 58/58 [02:11<00:00,  2.26s/it, loss=1.0556, acc=48.28%]
+evaluate: 100%|██████████| 15/15 [00:34<00:00,  2.28s/it]
+Train loss: 0.7551, acc: 0.4828
+Val loss: 0.7053, acc: 0.6000, F1: 0.3333, AUC: 0.6000
+No improvement: 1/10
+
+Fold 3 Classifier Epoch 11/50
+fold3 train: 100%|██████████| 58/58 [02:12<00:00,  2.28s/it, loss=1.1333, acc=50.86%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.23s/it]
+Train loss: 0.7318, acc: 0.5086
+Val loss: 0.6557, acc: 0.5667, F1: 0.5517, AUC: 0.6400
+No improvement: 2/10
+
+Fold 3 Classifier Epoch 12/50
+fold3 train: 100%|██████████| 58/58 [02:09<00:00,  2.24s/it, loss=0.9151, acc=54.31%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.37s/it]
+Train loss: 0.7422, acc: 0.5431
+Val loss: 0.7271, acc: 0.5667, F1: 0.2353, AUC: 0.4800
+No improvement: 3/10
+
+Fold 3 Classifier Epoch 13/50
+fold3 train: 100%|██████████| 58/58 [02:14<00:00,  2.32s/it, loss=0.4835, acc=51.72%]
+evaluate: 100%|██████████| 15/15 [00:34<00:00,  2.27s/it]
+Train loss: 0.7151, acc: 0.5172
+Val loss: 0.6591, acc: 0.6333, F1: 0.4211, AUC: 0.7200
+No improvement: 4/10
+
+Fold 3 Classifier Epoch 14/50
+fold3 train: 100%|██████████| 58/58 [02:12<00:00,  2.29s/it, loss=0.7873, acc=50.86%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.26s/it]
+Train loss: 0.7352, acc: 0.5086
+Val loss: 0.7122, acc: 0.5667, F1: 0.2353, AUC: 0.6400
+No improvement: 5/10
+
+Fold 3 Classifier Epoch 15/50
+fold3 train: 100%|██████████| 58/58 [02:12<00:00,  2.28s/it, loss=0.7503, acc=50.00%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.23s/it]
+Train loss: 0.7299, acc: 0.5000
+Val loss: 0.6758, acc: 0.5667, F1: 0.3810, AUC: 0.5733
+No improvement: 6/10
+
+Fold 3 Classifier Epoch 16/50
+fold3 train: 100%|██████████| 58/58 [02:35<00:00,  2.68s/it, loss=0.4827, acc=56.90%]
+evaluate: 100%|██████████| 15/15 [00:52<00:00,  3.47s/it]
+Train loss: 0.7004, acc: 0.5690
+Val loss: 0.6642, acc: 0.5667, F1: 0.2353, AUC: 0.6844
+No improvement: 7/10
+
+Fold 3 Classifier Epoch 17/50
+fold3 train: 100%|██████████| 58/58 [02:49<00:00,  2.92s/it, loss=0.7140, acc=52.59%]
+evaluate: 100%|██████████| 15/15 [00:37<00:00,  2.49s/it]
+Train loss: 0.7163, acc: 0.5259
+Val loss: 0.6712, acc: 0.6000, F1: 0.3333, AUC: 0.6622
+No improvement: 8/10
+
+Fold 3 Classifier Epoch 18/50
+fold3 train: 100%|██████████| 58/58 [02:32<00:00,  2.63s/it, loss=0.7496, acc=52.59%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.41s/it]
+Train loss: 0.6936, acc: 0.5259
+Val loss: 0.6166, acc: 0.7000, F1: 0.6087, AUC: 0.7644
+No improvement: 9/10
+
+Fold 3 Classifier Epoch 19/50
+fold3 train: 100%|██████████| 58/58 [02:13<00:00,  2.30s/it, loss=0.9081, acc=43.10%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.40s/it]
+Train loss: 0.7373, acc: 0.4310
+Val loss: 0.6305, acc: 0.7333, F1: 0.6364, AUC: 0.7156
+No improvement: 10/10
+Early stopped fold 3 at epoch 19
+Loaded best fold model from epoch 9
+evaluate: 100%|██████████| 19/19 [00:39<00:00,  2.08s/it]
+
+Fold test metrics:
+  accuracy: 0.7027
+  precision: 0.7000
+  recall: 0.7368
+  f1_score: 0.7179
+  auc: 0.7105
+  specificity: 0.6667
+  
+
+================================================================================
+Fold 4/5
+================================================================================
+Experiment dir: MacroMicro_5Fold_Output/MacroMicro_MIL_20260519_023950
+Device: cuda
+Image root: <PRIVATE_MRI_ROOT>
+Excel path: <PRIVATE_LABEL_FILE>
+Detector epochs: 100
+Classifier epochs: 50
+Top-K ROIs: 6, ROI size: 32
+Train: 117, Val: 30, Test: 36
+Train class distribution: [59, 58]
+Val class distribution: [15, 15]
+Test class distribution: [18, 18]
+Total parameters: 21,073,445
+Trainable parameters: 695,332
+
+Fold 4 Classifier Epoch 1/50
+fold4 train: 100%|██████████| 58/58 [02:17<00:00,  2.37s/it, loss=0.7175, acc=49.14%]
+evaluate: 100%|██████████| 15/15 [00:54<00:00,  3.61s/it]
+Train loss: 0.7290, acc: 0.4914
+Val loss: 0.6972, acc: 0.4000, F1: 0.2500, AUC: 0.5111
+Saved best fold model by auc=0.5111
+
+Fold 4 Classifier Epoch 2/50
+fold4 train: 100%|██████████| 58/58 [02:43<00:00,  2.82s/it, loss=0.7283, acc=48.28%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.44s/it]
+Train loss: 0.7445, acc: 0.4828
+Val loss: 0.6910, acc: 0.5000, F1: 0.4000, AUC: 0.5511
+Saved best fold model by auc=0.5511
+
+Fold 4 Classifier Epoch 3/50
+fold4 train: 100%|██████████| 58/58 [02:27<00:00,  2.54s/it, loss=0.7919, acc=49.14%]
+evaluate: 100%|██████████| 15/15 [00:34<00:00,  2.29s/it]
+Train loss: 0.7305, acc: 0.4914
+Val loss: 0.6918, acc: 0.6000, F1: 0.7000, AUC: 0.6044
+Saved best fold model by auc=0.6044
+
+Fold 4 Classifier Epoch 4/50
+fold4 train: 100%|██████████| 58/58 [02:22<00:00,  2.46s/it, loss=0.7491, acc=44.83%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.36s/it]
+Train loss: 0.7340, acc: 0.4483
+Val loss: 0.6944, acc: 0.5333, F1: 0.6667, AUC: 0.6489
+Saved best fold model by auc=0.6489
+
+Fold 4 Classifier Epoch 5/50
+fold4 train: 100%|██████████| 58/58 [02:22<00:00,  2.45s/it, loss=0.4995, acc=51.72%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.25s/it]
+Train loss: 0.7314, acc: 0.5172
+Val loss: 0.6873, acc: 0.6000, F1: 0.6842, AUC: 0.6444
+No improvement: 1/10
+
+Fold 4 Classifier Epoch 6/50
+fold4 train: 100%|██████████| 58/58 [02:21<00:00,  2.43s/it, loss=0.7081, acc=49.14%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.39s/it]
+Train loss: 0.7230, acc: 0.4914
+Val loss: 0.6688, acc: 0.5667, F1: 0.3810, AUC: 0.7822
+Saved best fold model by auc=0.7822
+
+Fold 4 Classifier Epoch 7/50
+fold4 train: 100%|██████████| 58/58 [02:25<00:00,  2.51s/it, loss=0.8220, acc=52.59%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.40s/it]
+Train loss: 0.7044, acc: 0.5259
+Val loss: 0.6765, acc: 0.6667, F1: 0.5000, AUC: 0.6889
+No improvement: 1/10
+
+Fold 4 Classifier Epoch 8/50
+fold4 train: 100%|██████████| 58/58 [02:23<00:00,  2.48s/it, loss=1.1419, acc=57.76%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.34s/it]
+Train loss: 0.7423, acc: 0.5776
+Val loss: 0.7012, acc: 0.5333, F1: 0.1250, AUC: 0.7556
+No improvement: 2/10
+
+Fold 4 Classifier Epoch 9/50
+fold4 train: 100%|██████████| 58/58 [02:32<00:00,  2.63s/it, loss=0.6647, acc=53.45%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.39s/it]
+Train loss: 0.7060, acc: 0.5345
+Val loss: 0.6991, acc: 0.5667, F1: 0.3158, AUC: 0.5511
+No improvement: 3/10
+
+Fold 4 Classifier Epoch 10/50
+fold4 train: 100%|██████████| 58/58 [02:25<00:00,  2.50s/it, loss=1.0262, acc=49.14%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.34s/it]
+Train loss: 0.7736, acc: 0.4914
+Val loss: 0.6950, acc: 0.5667, F1: 0.6977, AUC: 0.6489
+No improvement: 4/10
+
+Fold 4 Classifier Epoch 11/50
+fold4 train: 100%|██████████| 58/58 [02:30<00:00,  2.59s/it, loss=0.8551, acc=53.45%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.41s/it]
+Train loss: 0.7423, acc: 0.5345
+Val loss: 0.6913, acc: 0.6000, F1: 0.3333, AUC: 0.6044
+No improvement: 5/10
+
+Fold 4 Classifier Epoch 12/50
+fold4 train: 100%|██████████| 58/58 [02:22<00:00,  2.45s/it, loss=0.7863, acc=46.55%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.37s/it]
+Train loss: 0.7416, acc: 0.4655
+Val loss: 0.6832, acc: 0.5333, F1: 0.2222, AUC: 0.6756
+No improvement: 6/10
+
+Fold 4 Classifier Epoch 13/50
+fold4 train: 100%|██████████| 58/58 [02:20<00:00,  2.43s/it, loss=0.6609, acc=52.59%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.36s/it]
+Train loss: 0.7243, acc: 0.5259
+Val loss: 0.6914, acc: 0.5000, F1: 0.6154, AUC: 0.6000
+No improvement: 7/10
+
+Fold 4 Classifier Epoch 14/50
+fold4 train: 100%|██████████| 58/58 [02:22<00:00,  2.45s/it, loss=0.7474, acc=43.97%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.26s/it]
+Train loss: 0.7655, acc: 0.4397
+Val loss: 0.6868, acc: 0.5667, F1: 0.2353, AUC: 0.6844
+No improvement: 8/10
+
+Fold 4 Classifier Epoch 15/50
+fold4 train: 100%|██████████| 58/58 [02:19<00:00,  2.41s/it, loss=0.6849, acc=50.00%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.35s/it]
+Train loss: 0.7144, acc: 0.5000
+Val loss: 0.6783, acc: 0.5333, F1: 0.5882, AUC: 0.6400
+No improvement: 9/10
+
+Fold 4 Classifier Epoch 16/50
+fold4 train: 100%|██████████| 58/58 [02:21<00:00,  2.44s/it, loss=0.5971, acc=48.28%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.37s/it]
+Train loss: 0.7160, acc: 0.4828
+Val loss: 0.6732, acc: 0.7333, F1: 0.7143, AUC: 0.6756
+No improvement: 10/10
+Early stopped fold 4 at epoch 16
+Loaded best fold model from epoch 6
+evaluate: 100%|██████████| 18/18 [00:41<00:00,  2.31s/it]
+
+Fold test metrics:
+  accuracy: 0.6944
+  precision: 0.7059
+  recall: 0.6667
+  f1_score: 0.6857
+  auc: 0.6944
+  specificity: 0.7222
+ 
+
+================================================================================
+Fold 5/5
+================================================================================
+Experiment dir: MacroMicro_5Fold_Output/MacroMicro_MIL_20260519_023950
+Device: cuda
+Image root: <PRIVATE_MRI_ROOT>
+Excel path: <PRIVATE_LABEL_FILE>
+Detector epochs: 100
+Classifier epochs: 50
+Top-K ROIs: 6, ROI size: 32
+Train: 117, Val: 30, Test: 36
+Train class distribution: [59, 58]
+Val class distribution: [15, 15]
+Test class distribution: [18, 18]
+Total parameters: 21,073,445
+Trainable parameters: 695,332
+
+Fold 5 Classifier Epoch 1/50
+fold5 train: 100%|██████████| 58/58 [02:23<00:00,  2.48s/it, loss=0.5877, acc=49.14%]
+evaluate: 100%|██████████| 15/15 [00:38<00:00,  2.54s/it]
+Train loss: 0.7304, acc: 0.4914
+Val loss: 0.7486, acc: 0.4667, F1: 0.6364, AUC: 0.2800
+Saved best fold model by auc=0.2800
+
+Fold 5 Classifier Epoch 2/50
+fold5 train: 100%|██████████| 58/58 [02:22<00:00,  2.45s/it, loss=0.7359, acc=47.41%]
+evaluate: 100%|██████████| 15/15 [00:34<00:00,  2.27s/it]
+Train loss: 0.7445, acc: 0.4741
+Val loss: 0.7211, acc: 0.3333, F1: 0.4118, AUC: 0.3289
+Saved best fold model by auc=0.3289
+
+Fold 5 Classifier Epoch 3/50
+fold5 train: 100%|██████████| 58/58 [02:22<00:00,  2.46s/it, loss=1.1466, acc=46.55%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.44s/it]
+Train loss: 0.7364, acc: 0.4655
+Val loss: 0.7431, acc: 0.3667, F1: 0.4865, AUC: 0.3333
+Saved best fold model by auc=0.3333
+
+Fold 5 Classifier Epoch 4/50
+fold5 train: 100%|██████████| 58/58 [02:23<00:00,  2.47s/it, loss=0.6426, acc=54.31%]
+evaluate: 100%|██████████| 15/15 [00:33<00:00,  2.26s/it]
+Train loss: 0.7003, acc: 0.5431
+Val loss: 0.7115, acc: 0.4667, F1: 0.3333, AUC: 0.4933
+Saved best fold model by auc=0.4933
+
+Fold 5 Classifier Epoch 5/50
+fold5 train: 100%|██████████| 58/58 [02:21<00:00,  2.44s/it, loss=0.8917, acc=55.17%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.39s/it]
+Train loss: 0.6893, acc: 0.5517
+Val loss: 0.8263, acc: 0.5000, F1: 0.1176, AUC: 0.6000
+Saved best fold model by auc=0.6000
+
+Fold 5 Classifier Epoch 6/50
+fold5 train: 100%|██████████| 58/58 [02:23<00:00,  2.47s/it, loss=0.9288, acc=53.45%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.42s/it]
+Train loss: 0.7067, acc: 0.5345
+Val loss: 0.6752, acc: 0.6667, F1: 0.6207, AUC: 0.6400
+Saved best fold model by auc=0.6400
+
+Fold 5 Classifier Epoch 7/50
+fold5 train: 100%|██████████| 58/58 [02:20<00:00,  2.42s/it, loss=0.7034, acc=43.10%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.41s/it]
+Train loss: 0.7777, acc: 0.4310
+Val loss: 0.6778, acc: 0.6333, F1: 0.6207, AUC: 0.6267
+No improvement: 1/10
+
+Fold 5 Classifier Epoch 8/50
+fold5 train: 100%|██████████| 58/58 [02:24<00:00,  2.49s/it, loss=0.6090, acc=43.97%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.42s/it]
+Train loss: 0.7353, acc: 0.4397
+Val loss: 0.6840, acc: 0.6667, F1: 0.5000, AUC: 0.6356
+No improvement: 2/10
+
+Fold 5 Classifier Epoch 9/50
+fold5 train: 100%|██████████| 58/58 [02:19<00:00,  2.40s/it, loss=0.8868, acc=43.10%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.43s/it]
+Train loss: 0.7643, acc: 0.4310
+Val loss: 0.6848, acc: 0.5667, F1: 0.6486, AUC: 0.6178
+No improvement: 3/10
+
+Fold 5 Classifier Epoch 10/50
+fold5 train: 100%|██████████| 58/58 [02:31<00:00,  2.62s/it, loss=0.9899, acc=48.28%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.45s/it]
+Train loss: 0.7297, acc: 0.4828
+Val loss: 0.7250, acc: 0.5000, F1: 0.0000, AUC: 0.5378
+No improvement: 4/10
+
+Fold 5 Classifier Epoch 11/50
+fold5 train: 100%|██████████| 58/58 [02:27<00:00,  2.54s/it, loss=0.6396, acc=50.86%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.46s/it]
+Train loss: 0.7305, acc: 0.5086
+Val loss: 0.7072, acc: 0.5333, F1: 0.3636, AUC: 0.6400
+No improvement: 5/10
+
+Fold 5 Classifier Epoch 12/50
+fold5 train: 100%|██████████| 58/58 [02:24<00:00,  2.49s/it, loss=0.8519, acc=54.31%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.41s/it]
+Train loss: 0.7231, acc: 0.5431
+Val loss: 0.6465, acc: 0.7333, F1: 0.6429, AUC: 0.6933
+Saved best fold model by auc=0.6933
+
+Fold 5 Classifier Epoch 13/50
+fold5 train: 100%|██████████| 58/58 [02:26<00:00,  2.53s/it, loss=0.9021, acc=57.76%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.36s/it]
+Train loss: 0.7083, acc: 0.5776
+Val loss: 0.6469, acc: 0.6667, F1: 0.7059, AUC: 0.7156
+Saved best fold model by auc=0.7156
+
+Fold 5 Classifier Epoch 14/50
+fold5 train: 100%|██████████| 58/58 [02:23<00:00,  2.47s/it, loss=0.7653, acc=48.28%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.42s/it]
+Train loss: 0.7444, acc: 0.4828
+Val loss: 0.6736, acc: 0.5667, F1: 0.6486, AUC: 0.6889
+No improvement: 1/10
+
+Fold 5 Classifier Epoch 15/50
+fold5 train: 100%|██████████| 58/58 [02:24<00:00,  2.49s/it, loss=0.6419, acc=61.21%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.35s/it]
+Train loss: 0.6573, acc: 0.6121
+Val loss: 0.6860, acc: 0.6333, F1: 0.4762, AUC: 0.6667
+No improvement: 2/10
+
+Fold 5 Classifier Epoch 16/50
+fold5 train: 100%|██████████| 58/58 [02:24<00:00,  2.49s/it, loss=0.6791, acc=46.55%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.44s/it]
+Train loss: 0.7446, acc: 0.4655
+Val loss: 0.6877, acc: 0.5333, F1: 0.3000, AUC: 0.6489
+No improvement: 3/10
+
+Fold 5 Classifier Epoch 17/50
+fold5 train: 100%|██████████| 58/58 [02:22<00:00,  2.46s/it, loss=0.6126, acc=52.59%]
+evaluate: 100%|██████████| 15/15 [00:34<00:00,  2.32s/it]
+Train loss: 0.7186, acc: 0.5259
+Val loss: 0.6866, acc: 0.6667, F1: 0.5455, AUC: 0.5911
+No improvement: 4/10
+
+Fold 5 Classifier Epoch 18/50
+fold5 train: 100%|██████████| 58/58 [02:23<00:00,  2.47s/it, loss=0.6197, acc=54.31%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.44s/it]
+Train loss: 0.7181, acc: 0.5431
+Val loss: 0.7013, acc: 0.5000, F1: 0.6154, AUC: 0.5511
+No improvement: 5/10
+
+Fold 5 Classifier Epoch 19/50
+fold5 train: 100%|██████████| 58/58 [02:21<00:00,  2.43s/it, loss=0.5928, acc=50.00%]
+evaluate: 100%|██████████| 15/15 [00:36<00:00,  2.43s/it]
+Train loss: 0.7119, acc: 0.5000
+Val loss: 0.6900, acc: 0.6333, F1: 0.7179, AUC: 0.6222
+No improvement: 6/10
+
+Fold 5 Classifier Epoch 20/50
+fold5 train: 100%|██████████| 58/58 [02:24<00:00,  2.50s/it, loss=0.7664, acc=52.59%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.39s/it]
+Train loss: 0.6989, acc: 0.5259
+Val loss: 0.6591, acc: 0.6333, F1: 0.6667, AUC: 0.6756
+No improvement: 7/10
+
+Fold 5 Classifier Epoch 21/50
+fold5 train: 100%|██████████| 58/58 [02:19<00:00,  2.40s/it, loss=1.2224, acc=56.90%]
+evaluate: 100%|██████████| 15/15 [00:39<00:00,  2.65s/it]
+Train loss: 0.7071, acc: 0.5690
+Val loss: 0.7581, acc: 0.5333, F1: 0.1250, AUC: 0.6800
+No improvement: 8/10
+
+Fold 5 Classifier Epoch 22/50
+fold5 train: 100%|██████████| 58/58 [02:24<00:00,  2.50s/it, loss=0.5324, acc=56.03%]
+evaluate: 100%|██████████| 15/15 [00:35<00:00,  2.39s/it]
+Train loss: 0.7191, acc: 0.5603
+Val loss: 0.7166, acc: 0.5333, F1: 0.3000, AUC: 0.5022
+No improvement: 9/10
+
+Fold 5 Classifier Epoch 23/50
+fold5 train: 100%|██████████| 58/58 [02:26<00:00,  2.53s/it, loss=0.4480, acc=60.34%]
+evaluate: 100%|██████████| 15/15 [00:38<00:00,  2.55s/it]
+Train loss: 0.6964, acc: 0.6034
+Val loss: 0.6786, acc: 0.6667, F1: 0.5455, AUC: 0.6533
+No improvement: 10/10
+Early stopped fold 5 at epoch 23
+Loaded best fold model from epoch 13
+evaluate: 100%|██████████| 18/18 [00:42<00:00,  2.39s/it]
+
+Fold test metrics:
+  accuracy: 0.6389
+  precision: 0.6667
+  recall: 0.5556
+  f1_score: 0.6061
+  auc: 0.6821
+  specificity: 0.7222
+  
+
+================================================================================
+Five-fold cross-validation summary
+================================================================================
+accuracy: 0.6775 ± 0.0246
+precision: 0.6854 ± 0.0183
+recall: 0.6474 ± 0.0680
+f1_score: 0.6647 ± 0.0419
+auc: 	0.6969 ± 0.0119
+specificity: 0.7064 ± 0.0295
+Total five-fold time: 19144.35s
