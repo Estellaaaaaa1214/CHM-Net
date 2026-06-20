@@ -1,0 +1,31 @@
+CHM-Net checkpoint sanity-check evaluation
+=========================================
+
+Model: CHM-Net
+Dataset: GBNPC2026
+Checkpoint: checkpoints/final_macro_micro_locked_auc07116_anonymous.pth
+Evaluation scope: single_split_sanity_check
+Split protocol: stratified 70/30 split with split_seed=42
+Held-out samples: 55
+Class distribution: low=28, high=27
+
+Evaluation metrics
+------------------
+accuracy: 0.7273
+precision: 0.8000
+recall: 0.5926
+f1_score: 0.6809
+auc: 0.7116
+sensitivity: 0.5926
+specificity: 0.8571
+balanced_accuracy: 0.7249
+mcc: 0.4674
+confusion_matrix: [[24, 4], [11, 16]]
+
+Note
+----
+This checkpoint log is provided for model-loading and single-split sanity-check
+evaluation. The paper-level five-fold result is documented in:
+
+logs/CHM-Net_GBNPC2026_training.log
+results/CHM-Net_GBNPC2026_metrics.csv

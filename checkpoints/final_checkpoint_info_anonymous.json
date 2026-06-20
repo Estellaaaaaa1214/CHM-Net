@@ -1,0 +1,25 @@
+{
+  "model": "CHM-Net",
+  "dataset": "GBNPC2026",
+  "checkpoint_file": "checkpoints/final_macro_micro_locked_auc07116_anonymous.pth",
+  "checkpoint_epoch": 9,
+  "evaluation_scope": "single_split_sanity_check",
+  "split_protocol": "stratified 70/30 split with split_seed=42",
+  "note": "This checkpoint is released for model loading and single-split sanity-check evaluation. The paper-level five-fold result is documented in logs/CHM-Net_GBNPC2026_training.log and results/CHM-Net_GBNPC2026_metrics.csv.",
+  "metrics": {
+    "accuracy": 0.7272727272727273,
+    "precision": 0.8,
+    "recall": 0.5925925925925926,
+    "f1_score": 0.6808510638297872,
+    "auc": 0.7116402116402116,
+    "sensitivity": 0.5925925925925926,
+    "specificity": 0.8571428571428571,
+    "balanced_accuracy": 0.7248677248677249,
+    "mcc": 0.46737878934398275,
+    "confusion_matrix": [[24, 4], [11, 16]],
+    "sample_stats": {
+      "total": 55,
+      "class_distribution": [28, 27]
+    }
+  }
+}
