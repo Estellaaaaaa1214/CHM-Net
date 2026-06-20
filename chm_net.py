@@ -1,21 +1,6 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
-"""
-Macro-to-Micro Density-Aware MIL Network
 
-This script keeps the original data format and detector pretraining idea:
-3 MRI modalities per patient:
-    IMG_ROOT / patient_id / T1WI   / patient_id.nii.gz
-    IMG_ROOT / patient_id / T1WI+C / patient_id.nii.gz
-    IMG_ROOT / patient_id / T2WI   / patient_id.nii.gz
-
-Classification is changed from:
-    detector heatmap -> top 2D slices -> 2D CNN
-
-to:
-    detector heatmap -> top-K 3D ROIs -> ROI heatmap gating
-    -> tri-planar 2D micro encoder -> attention MIL -> patient label
-"""
 
 import argparse
 import glob
@@ -118,7 +103,6 @@ class EnhancedConfig:
     NUM_WORKERS = 0
     PIN_MEMORY = True
     OUTPUT_DIR = "CHM-Net_GBNPC2026_Output"
-    EXPERIMENT_NAME = f"MacroMicro_MIL_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
     DETECTOR_CKPT = ""
     RESUME_CKPT = ""
     SKIP_DETECTOR_PRETRAIN = False
@@ -1700,9 +1684,6 @@ def main():
 
 
 def build_arg_parser():
-    parser = argparse.ArgumentParser(
-        description="Macro-to-Micro Density-Aware MIL Network"
-    )
     parser.add_argument("--img-root", type=str, default="")
     parser.add_argument("--excel-path", type=str, default="", help="Excel label file path; kept for backward compatibility.")
     parser.add_argument("--label-file", type=str, default="", help="CSV or Excel label file for GBNPC2026.")
