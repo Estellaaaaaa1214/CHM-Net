@@ -1,17 +1,17 @@
 # CHM-Net 
 
-This is an anonymous release for CHM-Net on the GBNPC2026 MRI cohort.
-It contains the main CHM-Net training code, the reported training log, a compact
-metric table, and a synthetic label-file example.
+CHM-Net (Center Heatmap-driven Macro-Micro Modeling Network) is a PyTorch model for patient-level microbial density stratification from preoperative multimodal 3D MRI. The model connects global macro-level MRI context with localized micro-level imaging evidence without requiring manual lesion annotations.
+
+CHM-Net first learns a macro response heatmap to identify informative regions, then converts the selected regions into tri-planar micro representations. A macro-micro multiple-instance learning module aggregates the local evidence with the global MRI representation for final patient-level prediction.
 
 ## Files
 
-- `chm_net.py`: main CHM-Net training script.
-- `logs/CHM-Net_GBNPC2026_training.log`: full sanitized training log for the
-  reported CHM-Net result on GBNPC2026.
-- `results/CHM-Net_GBNPC2026_metrics.csv`: reported CHM-Net metrics.
-- `data/GBNPC2026_label_example.csv`: synthetic label-file example.
-- `requirements.txt`: Python package requirements.
+- `data/`: User-provided MRI volumes and metadata. 
+- `logs/`: Runtime log recorded during the training process.
+- `src/`: Source code for the CHM-Net model.
+- `README.md`: Model description, interface, and usage information.
+- `requirements.txt`: Python dependency specification for the core implementation.
+
 
 ## Data Format
 
@@ -35,33 +35,12 @@ modalities:
     T2WI/case_0001.nii.gz
 ```
 
-## Run
+## Source Files and Usage
 
-```bash
-python chm_net.py \
-  --img-root <GBNPC2026_IMAGE_ROOT> \
-  --label-file <GBNPC2026_LABEL_FILE> \
-  --id-col case_id \
-  --label-col label \
-  --output-dir runs/CHM-Net_GBNPC2026
-```
+The `src/` directory contains the core implementation:
 
-By default, `chm_net.py` uses a stratified 70/30 split with `--split-seed 42`.
-Users may change `--train-ratio` and `--split-seed` for their own runs.
+- `model.py`: defines the complete CHM-Net architecture, including the macro Transformer, heatmap-guided ROI miner, tri-planar micro encoder, and macro-micro MIL fusion module.
+- `losses.py`: provides the optional NT-Xent contrastive loss, heatmap sparsity loss, and heatmap smoothness loss.
+- `__init__.py`: exposes the model and loss functions as the package interface.
 
-## Reported Result
-
-The reported CHM-Net result on GBNPC2026 is:
-
-| Dataset | Model | ACC | AUC | F1 | Sens. | Spec. |
-| --- | --- | --- | --- | --- | --- | --- |
-| GBNPC2026 | CHM-Net | 67.75 +/- 2.46 | 69.69 +/- 1.19 | 66.47 +/- 4.19 | 64.74 +/- 6.80 | 70.64 +/- 2.95 |
-
-The full training log is provided at:
-
-```text
-logs/CHM-Net_GBNPC2026_training.log
-```
-
-Local paths and machine identifiers in the log were replaced with neutral
-placeholders. Metric values and fold-level traces were not changed.
+The model accepts a tensor with shape `[B, C, D, H, W]`, where `B` is the batch size and `C` is the number of MRI modalities.
