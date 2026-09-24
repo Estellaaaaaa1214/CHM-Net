@@ -29,10 +29,7 @@ Excel path: <PRIVATE_LABEL_FILE>
 Detector epochs: 100
 Classifier epochs: 50
 Top-K ROIs: 6, ROI size: 32
-Train: 116, Val: 30, Test: 37
-Train class distribution: [58, 58]
-Val class distribution: [15, 15]
-Test class distribution: [19, 18]
+Train: 146, Val_Test: 37
 Total parameters: 21,073,445
 Trainable parameters: 695,332
 
@@ -184,10 +181,7 @@ Excel path: <PRIVATE_LABEL_FILE>
 Detector epochs: 100
 Classifier epochs: 50
 Top-K ROIs: 6, ROI size: 32
-Train: 116, Val: 30, Test: 37
-Train class distribution: [58, 58]
-Val class distribution: [15, 15]
-Test class distribution: [19, 18]
+Train: 146, Val_Test: 37
 Total parameters: 21,073,445
 Trainable parameters: 695,332
 
@@ -395,10 +389,7 @@ Excel path: <PRIVATE_LABEL_FILE>
 Detector epochs: 100
 Classifier epochs: 50
 Top-K ROIs: 6, ROI size: 32
-Train: 116, Val: 30, Test: 37
-Train class distribution: [59, 57]
-Val class distribution: [15, 15]
-Test class distribution: [18, 19]
+Train: 146, Val_Test: 37
 Total parameters: 21,073,445
 Trainable parameters: 695,332
 
@@ -557,10 +548,7 @@ Excel path: <PRIVATE_LABEL_FILE>
 Detector epochs: 100
 Classifier epochs: 50
 Top-K ROIs: 6, ROI size: 32
-Train: 117, Val: 30, Test: 36
-Train class distribution: [59, 58]
-Val class distribution: [15, 15]
-Test class distribution: [18, 18]
+Train: 147, Val_Test: 36
 Total parameters: 21,073,445
 Trainable parameters: 695,332
 
@@ -698,10 +686,7 @@ Excel path: <PRIVATE_LABEL_FILE>
 Detector epochs: 100
 Classifier epochs: 50
 Top-K ROIs: 6, ROI size: 32
-Train: 117, Val: 30, Test: 36
-Train class distribution: [59, 58]
-Val class distribution: [15, 15]
-Test class distribution: [18, 18]
+Train: 147, Val_Test: 36
 Total parameters: 21,073,445
 Trainable parameters: 695,332
 
